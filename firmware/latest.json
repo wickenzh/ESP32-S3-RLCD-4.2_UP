@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.9",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.9.bin",
-  "sha256": "755885c564ff9ff5715d25f670559e8317726f122cec26497c62c068188fcaf1",
-  "size": 4348320,
-  "notes": "`v1.2.9`：清理 README 中已废弃的容器看板发布说明，恢复脚本自动化发布说明；第三页时间改为普通粗体数字并恢复图片/时间分割线；第三页取消 5 分钟自动返回，仅保留分钟级时间/温湿度刷新和小时级图片刷新；GitHub OTA 发布时只保留最新固件。"
+  "version": "v1.2.10",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.10.bin",
+  "sha256": "864ec852ee323353214b7d33af872f7b308a20de43c67faf214f6db3b379f4d5",
+  "size": 4251840,
+  "notes": "`v1.2.10`：修复 OTA 下载期间可能重启的问题：降低 OTA 进度 UI 刷新频率、增大下载缓冲、写入后让出 CPU，并避免普通网络同步与 OTA 并发抢 Wi-Fi；首页顶部新增整点提醒和 Wi-Fi 状态图标，预警信息优先显示；第三页时间取消外框，改为更大的粗块数字；GitHub OTA 发布继续只保留最新固件。"
 }
