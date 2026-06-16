@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.1",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.1.bin",
-  "sha256": "d799edc8c9173b6d194d6fa318705f0441da8712d2f28715c05fce23dbfbec50",
-  "size": 4108112,
-  "notes": "`v1.2.1`：使用新提供的 PNG 温度/湿度图标重新转换主工作页本地温湿度 20×20 单色位图，改善小尺寸下的内部轮廓和清晰度；同步生成 OTA 专用仓库 manifest，用于从 `v1.2.0` 测试 OTA 升级。"
+  "version": "v1.2.2",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.2.bin",
+  "sha256": "d2b0227da94e84fa7e62f2966d7b46162569860ebdd7865b892698d6407b2240",
+  "size": 4108880,
+  "notes": "`v1.2.2`：优化 System Info 页面 OTA 更新提示。检查更新、发现新版本、等待二次确认和下载过程增加更直观的提示与进度条；湿度图标在主工作页右移 4px，方便继续微调图标对齐。"
 }
