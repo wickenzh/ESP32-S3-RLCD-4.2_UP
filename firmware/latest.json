@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.7",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.7.bin",
-  "sha256": "6c0ced94302b0c021c1d1438f6102a05cfd49d587b566ee5ff97255207e944cd",
-  "size": 4255488,
-  "notes": "`v1.2.7`：调整第二页和第三页顶部温湿度摘要为黑底白字胶囊样式；第三页接入 clock_png 图片素材，左侧图片区每小时切换一张；右侧时间改为两行断码大字体显示小时和分钟，并取消右侧分割线。"
+  "version": "v1.2.8",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.8.bin",
+  "sha256": "c98ed3cd89deb5a56d1afa84590dde7ce8dcc1646d104ca1e8d04f24f2251486",
+  "size": 4251312,
+  "notes": "`v1.2.8`：调整第二页和第三页顶部温湿度摘要为普通文字样式，靠近电池并与日期字号统一；缩小第三页右侧断码时间，降低遮挡；优化 clock_png 图片转换，使用黑白抖动保留更多图片细节。"
 }
