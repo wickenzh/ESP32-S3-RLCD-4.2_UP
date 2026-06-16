@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.8",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.8.bin",
-  "sha256": "c98ed3cd89deb5a56d1afa84590dde7ce8dcc1646d104ca1e8d04f24f2251486",
-  "size": 4251312,
-  "notes": "`v1.2.8`：调整第二页和第三页顶部温湿度摘要为普通文字样式，靠近电池并与日期字号统一；缩小第三页右侧断码时间，降低遮挡；优化 clock_png 图片转换，使用黑白抖动保留更多图片细节。"
+  "version": "v1.2.9",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.9.bin",
+  "sha256": "755885c564ff9ff5715d25f670559e8317726f122cec26497c62c068188fcaf1",
+  "size": 4348320,
+  "notes": "`v1.2.9`：清理 README 中已废弃的容器看板发布说明，恢复脚本自动化发布说明；第三页时间改为普通粗体数字并恢复图片/时间分割线；第三页取消 5 分钟自动返回，仅保留分钟级时间/温湿度刷新和小时级图片刷新；GitHub OTA 发布时只保留最新固件。"
 }
