@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.2",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.2.bin",
-  "sha256": "d2b0227da94e84fa7e62f2966d7b46162569860ebdd7865b892698d6407b2240",
-  "size": 4108880,
-  "notes": "`v1.2.2`：优化 System Info 页面 OTA 更新提示。检查更新、发现新版本、等待二次确认和下载过程增加更直观的提示与进度条；湿度图标在主工作页右移 4px，方便继续微调图标对齐。"
+  "version": "v1.2.3",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.3.bin",
+  "sha256": "b58aa3656cc5c40f791e1c99ca02f421d29b73acf35cc18195abcfcfac52ed53",
+  "size": 4110080,
+  "notes": "`v1.2.3`：优化 OTA 更新过程显示，在 System Info 更新固件时增加下载速度显示；System Info 版本行增加编译日期；新增第三工作页结构，保留电池、日期、星期和顶部分割线，右侧显示分钟级当前时间，左侧预留图片区域；第二页和第三页顶部空白区显示本地温湿度摘要；新增 Node-RED 本地自动化看板和本机 runner，用于编排构建、预览、manifest、Gitea 推送和 GitHub OTA 发布。"
 }
