@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.11",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.11.bin",
-  "sha256": "9796e69f33e05226d91a266121e86160abd5eb3494a7636ab68c764b76ee1ad6",
-  "size": 4251776,
-  "notes": "`v1.2.11`：接入本地 Gitea Token 读取和 Release 附件补传脚本；修复 Gitea Release 打包对 OTA 分区的支持，按 flash_args 纳入 ota_data_initial.bin 和真实烧录偏移；第三页停留时暂停自动天气/预警同步，仅保留必要 NTP；低电量触发时从普通页面、设置页和 System Info 回到极简显示；重新转换并右移首页整点提醒和 Wi-Fi 状态图标，避免遮挡电池。"
+  "version": "v1.2.12",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.12.bin",
+  "sha256": "2871da185e0f9842b0dfd46acd84cf9d41b2faa750365a43d9e298b3d835cb82",
+  "size": 4254448,
+  "notes": "`v1.2.12`：增强 OTA 下载稳定性，增加任务看门狗喂狗、无进度超时、下载总超时和切换前镜像描述校验；首页整点提醒/Wi-Fi 图标改为 19×19 加粗位图并右移，避免遮挡电池；电池检测到充电趋势时，当前电量刻度按秒闪烁。"
 }
