@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.13",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.13.bin",
-  "sha256": "c14ae781e5d55706dafb7d2e178e26d69fc572ab0a33dc9ef6a1799573c989c1",
-  "size": 4254928,
-  "notes": "`v1.2.13`：新增首页小喇叭/Wi-Fi PNG 转 1-bit 脚本并重新生成 19×19 状态图标，改善过黑和细节丢失；第三页非充电状态改为分钟级刷新，避免图片区域持续频闪；充电时保留电池刻度秒级闪烁，并优化拔掉充电器后的退出速度。"
+  "version": "v1.2.15",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.15.bin",
+  "sha256": "201f503e892dcdf5f189ce2712217067e86ef399f1403e8c72b1db86a2dbd792",
+  "size": 4256560,
+  "notes": "`v1.2.15`：第三页底部新增每日文字显示，开机和每天 00:00 通过 uapis saying API 同步一次并缓存到 NVS；第三页图片和分钟时间上移，缩短竖向分割线，为底部文字预留空间。"
 }
