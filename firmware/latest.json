@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.15",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.15.bin",
-  "sha256": "201f503e892dcdf5f189ce2712217067e86ef399f1403e8c72b1db86a2dbd792",
-  "size": 4256560,
-  "notes": "`v1.2.15`：第三页底部新增每日文字显示，开机和每天 00:00 通过 uapis saying API 同步一次并缓存到 NVS；第三页图片和分钟时间上移，缩短竖向分割线，为底部文字预留空间。"
+  "version": "v1.2.16",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.16.bin",
+  "sha256": "2a96d008f269b7c5f237f3dfed14565768d6b5f673a5b88555262d8856aacce8",
+  "size": 4257104,
+  "notes": "`v1.2.16`：首页小喇叭和 Wi-Fi 状态图标右移并上移，第三页小时数字下移；OTA 下载改为 4KB 分块和平滑节奏，增加复位原因、电池电压、电量、Wi-Fi RSSI 和固件大小日志，用于排查 OTA 重启。"
 }
