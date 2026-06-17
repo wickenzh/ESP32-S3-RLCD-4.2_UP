@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.1",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.1.bin",
-  "sha256": "01fbd1b41f8bf9aa4c67057ff089564a421ab390ca3c33cadb41558254c4fea2",
-  "size": 4264720,
-  "notes": "`v1.3.1`：修复 OTA 或联网期间显示刷新可能因 SPI DMA 临时内存不足而触发整机重启的问题；RLCD 数据发送改为 2KB 分块、短延迟重试和失败告警，不再对一次发送失败直接 abort；OTA 下载参数从 2KB/60ms 调整为 4KB/25ms，并增加 OTA 阶段内存诊断日志；第四页日历当前日期高亮改为圆角黑底。"
+  "version": "v1.3.3",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.3.bin",
+  "sha256": "4262f21af4b0727cebf2a2eb5f0fe6d591dead435f72cc35034bb3e4d759f886",
+  "size": 4266832,
+  "notes": "`v1.3.3`：基于 `v1.3.2` 的 OTA 稳定性测试版本，保留上位机 DIY 图片资源预留、恢复出厂二次确认修复、ADC 常驻复用和充电误闪烁收敛逻辑；用于通过 GitHub OTA 仓库验证升级下载稳定性。"
 }
