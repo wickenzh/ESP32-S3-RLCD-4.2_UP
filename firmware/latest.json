@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.17",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.17.bin",
-  "sha256": "8fd4287f7f952968f5e1bed48eac8db0978672de9051049613bc822de23e86dd",
-  "size": 4257104,
-  "notes": "`v1.2.17`：首页小喇叭和 Wi-Fi 状态图标改为 19×19 专用圆润化位图，减少锯齿；第三页小时数字整体下移 5px，保持分钟和图片区布局不变。"
+  "version": "v1.2.18",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.18.bin",
+  "sha256": "02053416a4174a871c78dfe59bdb0bb6cd2f60e45d3a3dcfd15446abe20c1f58",
+  "size": 4257360,
+  "notes": "`v1.2.18`：恢复首页小喇叭和 Wi-Fi 状态图标到上一版风格；第三页小时数字继续下移 5px；每日文字同步时过滤超过 24 个字符的内容，避免底部单行显示溢出。"
 }
