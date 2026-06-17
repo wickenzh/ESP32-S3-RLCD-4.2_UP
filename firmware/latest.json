@@ -1,7 +1,7 @@
 {
-  "version": "v1.2.19",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.2.19.bin",
-  "sha256": "b98b5ed9fbe98a8a732f8fd40b8351624da7e4ad341cbd8ca993b9cf05d44c7e",
-  "size": 4264800,
-  "notes": "`v1.2.19`：v1.2.19：新增第四页当月日历并优化 OTA 下载稳定性"
+  "version": "v1.3.0",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.0.bin",
+  "sha256": "c7249e8e67f180df41c1f1c1f30d4d88e017ebdda1ee85f67ec0fa68dc9db1b9",
+  "size": 4264448,
+  "notes": "`v1.3.0`：优化第四页日历星期栏和日期排版；周日、周六保持黑底白字，周一到周五改为同宽点阵底纹并取消实线分隔，使星期栏视觉统一但不影响文字识别。"
 }
