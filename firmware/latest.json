@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.12",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.12.bin",
-  "sha256": "5fb25d147536f592612db9d6b5a8bed5fe26378d6ca0a83cd5f3946c877e697c",
-  "size": 5676944,
-  "notes": "`v1.3.12`：修复图片时钟页面分钟数字下半部分被裁剪的问题；统一第三页时间 canvas 的绘制边界和实际尺寸。"
+  "version": "v1.3.13",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.13.bin",
+  "sha256": "cafa602985d8c03c0fae518b35dc0afa6f6d1240e9831c2f3a17c7c68637bd4e",
+  "size": 5677376,
+  "notes": "`v1.3.13`：将天气定位 API 切换到 uapis.cn 的 myip 接口，只取城市级地点；图片时钟底部每日文字长度限制调整为不超过 22 个字符。"
 }
