@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.10",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.10.bin",
-  "sha256": "bb6b6790c39ac37e4711bfe7a210aaea731d67f6130ed76ce701c625967eb439",
-  "size": 5676032,
-  "notes": "`v1.3.10`：OTA 完成后增加重启提示停留时间；天气时钟首次显示等待数据时主动触发一次天气同步；关闭未使用的音频 codec 驱动，仅保留本设备播放所需的 ES8311 支持以缩小固件体积。"
+  "version": "v1.3.11",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.11.bin",
+  "sha256": "5d14d39e20180cbe270e656f354d6a545af34407063266d989422faacb145ab4",
+  "size": 5676992,
+  "notes": "`v1.3.11`：修复问题清单中的稳定性隐患：OTA 前强制退出配网 AP 并切到 STA-only，天气/预警数据改为快照保护，Wi-Fi 停止失败时保持状态一致，每日文字失败继续重试，并补充绘图边界保护。"
 }
