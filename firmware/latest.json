@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.6",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.6.bin",
-  "sha256": "d4d5864f1c2cd4483d74fa0ed040921cde46088ba04b1a16671b4524fc61b8ae",
-  "size": 5682144,
-  "notes": "`v1.3.6`：修复页面顺序在断电重启后未按用户排序恢复的问题；页面顺序每次交换后立即写入 NVS，超时退出排序页时也会兜底保存，并在退出设置后按排序表第一个已启用页面恢复显示。"
+  "version": "v1.3.7",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.7.bin",
+  "sha256": "839c2601a1b30093f8c879ca810ee30bfe6a2d181ee43165ce412ee8be88fc87",
+  "size": 5682912,
+  "notes": "`v1.3.7`：修复设置页检查更新区域显示不完整的问题；补回 OTA 状态提示、BOOT 操作提示和下载进度条，并将下载百分比与速度整体上移，为进度条预留空间。"
 }
