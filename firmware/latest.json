@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.7",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.7.bin",
-  "sha256": "839c2601a1b30093f8c879ca810ee30bfe6a2d181ee43165ce412ee8be88fc87",
-  "size": 5682912,
-  "notes": "`v1.3.7`：修复设置页检查更新区域显示不完整的问题；补回 OTA 状态提示、BOOT 操作提示和下载进度条，并将下载百分比与速度整体上移，为进度条预留空间。"
+  "version": "v1.3.8",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.8.bin",
+  "sha256": "6e48c01c70dc673ddfc0c7b776eab735b1c04ec526d5b596e95b1a64de9b669c",
+  "size": 5682880,
+  "notes": "`v1.3.8`：修复设置页长按或页面顺序操作后过早返回主界面的问题；KEY/BOOT 在设置页内按下和松手都会刷新 7 秒无操作计时，确保每次操作后重新完整计时。"
 }
