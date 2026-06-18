@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.3",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.3.bin",
-  "sha256": "4262f21af4b0727cebf2a2eb5f0fe6d591dead435f72cc35034bb3e4d759f886",
-  "size": 4266832,
-  "notes": "`v1.3.3`：基于 `v1.3.2` 的 OTA 稳定性测试版本，保留上位机 DIY 图片资源预留、恢复出厂二次确认修复、ADC 常驻复用和充电误闪烁收敛逻辑；用于通过 GitHub OTA 仓库验证升级下载稳定性。"
+  "version": "v1.3.6",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.6.bin",
+  "sha256": "d4d5864f1c2cd4483d74fa0ed040921cde46088ba04b1a16671b4524fc61b8ae",
+  "size": 5682144,
+  "notes": "`v1.3.6`：修复页面顺序在断电重启后未按用户排序恢复的问题；页面顺序每次交换后立即写入 NVS，超时退出排序页时也会兜底保存，并在退出设置后按排序表第一个已启用页面恢复显示。"
 }
