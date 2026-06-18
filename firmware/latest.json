@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.8",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.8.bin",
-  "sha256": "6e48c01c70dc673ddfc0c7b776eab735b1c04ec526d5b596e95b1a64de9b669c",
-  "size": 5682880,
-  "notes": "`v1.3.8`：修复设置页长按或页面顺序操作后过早返回主界面的问题；KEY/BOOT 在设置页内按下和松手都会刷新 7 秒无操作计时，确保每次操作后重新完整计时。"
+  "version": "v1.3.9",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.9.bin",
+  "sha256": "fb8679ba9a07b7c01e07195d111fd30fd7bde7efab5ea58f5b617b91ab7a5c34",
+  "size": 5683840,
+  "notes": "`v1.3.9`：设置页超时调整为 30 秒，优化每日文字与温湿度历史 NVS 写入，并补齐开机 NTP、天气和一言同步路径。"
 }
