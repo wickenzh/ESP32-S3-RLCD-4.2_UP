@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.9",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.9.bin",
-  "sha256": "fb8679ba9a07b7c01e07195d111fd30fd7bde7efab5ea58f5b617b91ab7a5c34",
-  "size": 5683840,
-  "notes": "`v1.3.9`：设置页超时调整为 30 秒，优化每日文字与温湿度历史 NVS 写入，并补齐开机 NTP、天气和一言同步路径。"
+  "version": "v1.3.10",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.10.bin",
+  "sha256": "bb6b6790c39ac37e4711bfe7a210aaea731d67f6130ed76ce701c625967eb439",
+  "size": 5676032,
+  "notes": "`v1.3.10`：OTA 完成后增加重启提示停留时间；天气时钟首次显示等待数据时主动触发一次天气同步；关闭未使用的音频 codec 驱动，仅保留本设备播放所需的 ES8311 支持以缩小固件体积。"
 }
