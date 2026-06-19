@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.15",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.15.bin",
-  "sha256": "7792eea13b32ecf439740e9baa33fbed14e0018f9c132be16849e31e18b05bcc",
+  "version": "v1.3.16",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.16.bin",
+  "sha256": "4ae4130bb3eecc04e932a0c4d6d5d154f127cedfa1dbe7030f1ad3c1258f8563",
   "size": 5592480,
-  "notes": "`v1.3.15`：自定义资源兼容修复：首页 GIF 支持连续 bitstream 并兼容 bytes_per_row=0，内置图片时钟兜底图片精简为 6 张以降低固件体积；保留自定义资源诊断日志用于继续排查上位机资源显示。"
+  "notes": "`v1.3.16`：合并 host_web 上位机网页项目到主分支，后续主分支同步保留该目录但固件开发不直接修改其中内容；发布流程继续覆盖固件、预览、Gitea Release 与 GitHub OTA。"
 }
