@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.14",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.14.bin",
-  "sha256": "4dcfce7c81ff4e9af66b721833108a2267d6422ebce157b6a268db17cc71c73d",
-  "size": 5677392,
-  "notes": "`v1.3.14`：调整设置页显示菜单排版：温度历史/日历对齐声音行，页面顺序对齐系统行；README 页面预览改为只展示四合一总览图，并增强预览合成脚本避免漏图。"
+  "version": "v1.3.15",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.15.bin",
+  "sha256": "7792eea13b32ecf439740e9baa33fbed14e0018f9c132be16849e31e18b05bcc",
+  "size": 5592480,
+  "notes": "`v1.3.15`：自定义资源兼容修复：首页 GIF 支持连续 bitstream 并兼容 bytes_per_row=0，内置图片时钟兜底图片精简为 6 张以降低固件体积；保留自定义资源诊断日志用于继续排查上位机资源显示。"
 }
