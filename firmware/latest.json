@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.17",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.17.bin",
-  "sha256": "e01afde7d5b4b228a5f1d16755179b861dabd632b0f752e8ea2a805d819db549",
-  "size": 5593232,
-  "notes": "`v1.3.17`：移除 SHTC3 固定 -4℃ 温度补偿；天气预警标题增加 6 字显示压缩，避免顶部预警条文字溢出。"
+  "version": "v1.3.18",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.18.bin",
+  "sha256": "40dcb4947f829282496f1d229e7b74572c6010f5ecfed53c29bb44548ad90ed0",
+  "size": 5594016,
+  "notes": "`v1.3.18`：修复 OTA 完成后重启提示可能被设置页超时吞掉的问题；检查更新区域新增当前版本提示；收敛启动页任务同步、任务栈和 PM lock 稳定性。"
 }
