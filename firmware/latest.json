@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.21",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.21.bin",
-  "sha256": "6911b9819a467305c98186d5234dbcd87b65ca1a92ba047b24261c147cc38a36",
-  "size": 5598560,
-  "notes": "`v1.3.21`：修复日历页极端月份第 6 行日期不可见的问题，当前日期落到第 6 行时自动裁掉已过去首行并上移显示；同步 `host_web` 上位机目录的现有改动。"
+  "version": "v1.3.22",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.22.bin",
+  "sha256": "af4708f03808022fa0cae037d795b3e7e9c1e1f967110af869464e068a516c23",
+  "size": 5598304,
+  "notes": "`v1.3.22`：本地稳定性重构测试版；拆分通用 canvas、页面状态、图片时钟、HTTP 客户端和每日文字模块，收敛 UI/网络模块职责，并为常驻任务创建增加失败日志，方便后续维护和问题定位。"
 }
