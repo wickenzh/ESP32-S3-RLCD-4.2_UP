@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.20",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.20.bin",
-  "sha256": "f6d8914b2fda0e83c5a11294bb54f12c1d59760ffebf11d1b2e3578ef965daeb",
-  "size": 5598512,
-  "notes": "`v1.3.20`：优化整点提醒和试听音的起播稳定性，播放前增加静音预热并对起始音频做短淡入，降低 codec/功放刚启动时出现炸麦或首音不清晰的概率。"
+  "version": "v1.3.21",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.21.bin",
+  "sha256": "6911b9819a467305c98186d5234dbcd87b65ca1a92ba047b24261c147cc38a36",
+  "size": 5598560,
+  "notes": "`v1.3.21`：修复日历页极端月份第 6 行日期不可见的问题，当前日期落到第 6 行时自动裁掉已过去首行并上移显示；同步 `host_web` 上位机目录的现有改动。"
 }
