@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.19",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.19.bin",
-  "sha256": "5138f972ecaab4d2d977a0148b17b567689eda54f91b21af58f07d8c2f46148d",
-  "size": 5598208,
-  "notes": "`v1.3.19`：配网模式增加强制门户，连接设备 AP 后通过 DNS/DHCP/HTTP 跳转自动弹出配网页；同步清理 README 过期说明，并收敛天气等待重试、OTA 重启窗口采样和 LVGL canvas 分配逻辑。"
+  "version": "v1.3.20",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.20.bin",
+  "sha256": "f6d8914b2fda0e83c5a11294bb54f12c1d59760ffebf11d1b2e3578ef965daeb",
+  "size": 5598512,
+  "notes": "`v1.3.20`：优化整点提醒和试听音的起播稳定性，播放前增加静音预热并对起始音频做短淡入，降低 codec/功放刚启动时出现炸麦或首音不清晰的概率。"
 }
