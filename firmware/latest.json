@@ -1,7 +1,7 @@
 {
-  "version": "v1.3.22",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.3.22.bin",
-  "sha256": "af4708f03808022fa0cae037d795b3e7e9c1e1f967110af869464e068a516c23",
-  "size": 5598304,
-  "notes": "`v1.3.22`：本地稳定性重构测试版；拆分通用 canvas、页面状态、图片时钟、HTTP 客户端和每日文字模块，收敛 UI/网络模块职责，并为常驻任务创建增加失败日志，方便后续维护和问题定位。"
+  "version": "v1.4.0",
+  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.4.0.bin",
+  "sha256": "e69d4a7f7ce8c0df30f00596c4e1e2a62fc5b3b8f1def8c1338769012e370ed6",
+  "size": 5621520,
+  "notes": "`v1.4.0`：补充 `v1.3.30` 离线模式更新说明，新增中文用户使用说明，并将 OTA 固件发布信息更新到当前版本。"
 }
