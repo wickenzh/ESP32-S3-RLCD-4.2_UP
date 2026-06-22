@@ -1,7 +1,7 @@
 {
   "version": "v1.4.0",
-  "url": "https://raw.githubusercontent.com/wickenzh/ESP32-S3-RLCD-4.2_UP/main/firmware/weather_clock_v1.4.0.bin",
-  "sha256": "e69d4a7f7ce8c0df30f00596c4e1e2a62fc5b3b8f1def8c1338769012e370ed6",
-  "size": 5621520,
+  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.0/weather_clock_v1.4.0.bin",
+  "sha256": "29ee12e8fdc66142e123241cf427ff7ac8155a4caadb2852a312f63b7cebe90b",
+  "size": 5622752,
   "notes": "`v1.4.0`：补充 `v1.3.30` 离线模式更新说明，新增中文用户使用说明，并将 OTA 固件发布信息更新到当前版本。"
 }
