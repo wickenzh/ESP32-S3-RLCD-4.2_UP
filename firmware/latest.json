@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.5",
-  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.5/weather_clock_v1.4.5.bin",
-  "sha256": "4e1330178a33123a316eb5b879f78d824fa0382a2785498a4cfca9e913c88071",
-  "size": 5623104,
-  "notes": "`v1.4.5`：仅迭代版本号，用于验证 GitHub OTA 正式下载链路。"
+  "version": "v1.4.6",
+  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.6/weather_clock_v1.4.6.bin",
+  "sha256": "fb2ca47418bfa8d287e7ec1f894891e2f92130596eaf7300331230d5afcc1ead",
+  "size": 5623120,
+  "notes": "`v1.4.6`：修复 GitHub Release 跳转后长签名 URL 导致 OTA 下载请求发送失败的问题。"
 }
