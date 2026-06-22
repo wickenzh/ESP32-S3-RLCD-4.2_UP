@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.7",
-  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.7/weather_clock_v1.4.7.bin",
-  "sha256": "c231cf8dc77e469ee3d25c75d6d8136aa25bee8e8e76dddcb49230e00a339a16",
-  "size": 5623120,
-  "notes": "`v1.4.7`：修复 GitHub OTA 长签名 URL 下载请求失败，并调整设置页显示/系统菜单按钮右侧对齐。"
+  "version": "v1.4.8",
+  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.8/weather_clock_v1.4.8.bin",
+  "sha256": "74e2b14b80c1c6c93bf8ed1bce8ec8f08758927094be4879fdb75c3dedf283e9",
+  "size": 5623088,
+  "notes": "`v1.4.8`：调整设置页半宽按钮中间间距，保持外侧边界与长按钮对齐。"
 }
