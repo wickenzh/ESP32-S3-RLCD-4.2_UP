@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.1",
-  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.1/weather_clock_v1.4.1.bin",
-  "sha256": "5e660403930e6d0acc1db90ba89274d425042aa14c4ff00e7cb6eda232bcb46c",
-  "size": 5622752,
-  "notes": "`v1.4.1`：OTA 发布流程实验版：GitHub OTA 仓库改为保留历史 Release 附件，代码区新增说明文档，并验证 manifest 指向 GitHub Release 固件。"
+  "version": "v1.4.3",
+  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.3/weather_clock_v1.4.3.bin",
+  "sha256": "643f5ead9ec49b641da24ff9a844dd4f86d69d5cb2dba1ddd8b5cd36a6b0afb9",
+  "size": 5622336,
+  "notes": "`v1.4.3`：页面刷新与联网同步改为页面可见时按需触发；系统设置页调整离线模式、网络检测、恢复出厂和关于本机顺序，并优化离线模式按钮显示。"
 }
