@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.8",
-  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.8/weather_clock_v1.4.8.bin",
-  "sha256": "74e2b14b80c1c6c93bf8ed1bce8ec8f08758927094be4879fdb75c3dedf283e9",
-  "size": 5623088,
-  "notes": "`v1.4.8`：调整设置页半宽按钮中间间距，保持外侧边界与长按钮对齐。"
+  "version": "v1.4.10",
+  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.10/weather_clock_v1.4.10.bin",
+  "sha256": "9006469f8319940ef518425b74bd7d1f8cc055e67e1a3e8c717eb779c6f93942",
+  "size": 5728672,
+  "notes": "`v1.4.10`：新增天气看板页面并优化 5 天天气预报、空气质量、预警显示和整点报时 I2S 关闭稳定性。"
 }
