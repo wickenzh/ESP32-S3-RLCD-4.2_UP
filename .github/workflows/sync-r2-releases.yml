@@ -1,0 +1,158 @@
+name: Sync R2 OTA Releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-r2-ota-releases
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync R2 versions to GitHub Releases
+        env:
+          R2_VERSIONS_URL: ${{ vars.R2_VERSIONS_URL }}
+          OTA_RELEASE_KEEP: ${{ vars.OTA_RELEASE_KEEP }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 <<'PY'
+          import hashlib
+          import json
+          import os
+          import re
+          import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          versions_url = os.environ.get("R2_VERSIONS_URL", "").strip()
+          if not versions_url:
+              raise SystemExit("Repository variable R2_VERSIONS_URL is not configured")
+          keep_raw = os.environ.get("OTA_RELEASE_KEEP", "").strip()
+          keep = int(keep_raw) if keep_raw.isdigit() else 10
+          repo = os.environ["GITHUB_REPOSITORY"]
+          token = os.environ["GITHUB_TOKEN"]
+          api = f"https://api.github.com/repos/{repo}"
+          headers = {
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "weather-clock-r2-release-sync",
+          }
+
+          def http_json(method, url, payload=None, raw=None, extra_headers=None, not_found_none=False, timeout=180):
+              req_headers = dict(headers)
+              data = raw
+              if payload is not None:
+                  data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+                  req_headers["Content-Type"] = "application/json"
+              if extra_headers:
+                  req_headers.update(extra_headers)
+              for attempt in range(1, 6):
+                  req = urllib.request.Request(url, data=data, method=method, headers=req_headers)
+                  try:
+                      with urllib.request.urlopen(req, timeout=timeout) as response:
+                          body = response.read()
+                          return json.loads(body.decode("utf-8")) if body else {}
+                  except urllib.error.HTTPError as exc:
+                      detail = exc.read().decode("utf-8", errors="replace")
+                      if exc.code == 404 and not_found_none:
+                          return None
+                      if attempt == 5 or exc.code not in (408, 429, 500, 502, 503, 504):
+                          raise SystemExit(f"GitHub API {method} {url} failed: HTTP {exc.code} {detail}") from exc
+                  time.sleep(attempt * 2)
+              return None
+
+          def fetch(url, timeout=300):
+              for attempt in range(1, 6):
+                  try:
+                      with urllib.request.urlopen(url, timeout=timeout) as response:
+                          return response.read()
+                  except Exception:
+                      if attempt == 5:
+                          raise
+                      time.sleep(attempt * 2)
+
+          def version_key(version):
+              nums = [int(x) for x in re.findall(r"\d+", version)]
+              return nums or [0]
+
+          data = json.loads(fetch(versions_url, timeout=60).decode("utf-8"))
+          items = sorted(data.get("items", []), key=lambda item: version_key(item.get("version", "")), reverse=True)[:keep]
+          if not items:
+              raise SystemExit("R2 versions.json has no items")
+
+          latest = data.get("latest") or items[0].get("version")
+          print(f"Syncing {len(items)} version(s), latest={latest}")
+
+          for item in items:
+              version = item.get("version")
+              if not version:
+                  continue
+              release = http_json("GET", f"{api}/releases/tags/{version}", not_found_none=True)
+              notes = item.get("notes") or "Synced from Cloudflare R2."
+              body = (
+                  "Synced from Cloudflare R2 OTA storage.\n\n"
+                  f"- Version: `{version}`\n"
+                  "- App bin: device OTA upgrade image\n"
+                  "- Merged bin: complete serial flash image\n\n"
+                  f"Notes:\n{notes}\n"
+              )
+              if release is None:
+                  release = http_json("POST", f"{api}/releases", {
+                      "tag_name": version,
+                      "name": version,
+                      "body": body,
+                      "draft": False,
+                      "prerelease": False,
+                  })
+              else:
+                  release = http_json("PATCH", f"{api}/releases/{release['id']}", {
+                      "name": version,
+                      "body": body,
+                      "draft": False,
+                      "prerelease": False,
+                  })
+
+              assets = http_json("GET", f"{api}/releases/{release['id']}/assets") or []
+              assets_by_name = {asset.get("name"): asset for asset in assets}
+              upload_url = release["upload_url"].split("{")[0]
+
+              for kind, suffix in (("app", ".bin"), ("merged", "_merged.bin")):
+                  meta = item.get(kind) or {}
+                  url = meta.get("url")
+                  sha_expected = (meta.get("sha256") or "").lower()
+                  size_expected = int(meta.get("size") or 0)
+                  if not url or not sha_expected:
+                      print(f"skip {version} {kind}: missing url or sha256")
+                      continue
+                  name = f"weather_clock_{version}{suffix}"
+                  existing = assets_by_name.get(name)
+                  if existing and size_expected and int(existing.get("size") or 0) == size_expected:
+                      print(f"kept {version} {name}")
+                      continue
+
+                  blob = fetch(url)
+                  sha_actual = hashlib.sha256(blob).hexdigest()
+                  if sha_actual != sha_expected:
+                      raise SystemExit(f"sha256 mismatch for {name}: {sha_actual} != {sha_expected}")
+                  if size_expected and len(blob) != size_expected:
+                      raise SystemExit(f"size mismatch for {name}: {len(blob)} != {size_expected}")
+
+                  if existing:
+                      http_json("DELETE", f"{api}/releases/assets/{existing['id']}")
+                      print(f"deleted stale {version} {name}")
+                  encoded_name = urllib.parse.urlencode({"name": name})
+                  http_json("POST", f"{upload_url}?{encoded_name}", raw=blob, extra_headers={"Content-Type": "application/octet-stream"}, timeout=300)
+                  print(f"uploaded {version} {name} ({len(blob)} bytes)")
+
+          print("R2 OTA Release sync complete")
+          PY
