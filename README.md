@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.4.25`
+- 最新版本：`v1.4.27`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -25,6 +25,6 @@
 
 ## 最近版本
 
-- `v1.4.25`：`v1.4.25`：取消翻页时钟铰链/折线显示，保留圆角黑底数字牌，并整理数字居中与顶部温湿度显示。
-  - app sha256: `41f6e78b53041ed4608d007da9f79e79a073330e081c4ee9c81d82d1a9f68f9c`
-  - merged sha256: `a637e1a0db277edd3febd2b01b4f48e498e0ec4106a800056baa1955c1c9da0b`
+- `v1.4.27`：`v1.4.27`：降低未充电状态电池采样频率，低刷新页面空闲按键轮询放宽到 500ms，并增加 RLCD 局部/全屏刷新诊断日志。
+  - app sha256: `1d7759c892282efa49c874b761e60ab816b5f11dfb7b75532834fa93415a6ae5`
+  - merged sha256: `291b1775860c93d2cf47b87773faf09ee7b760ebff0d4266adbc8d47c456901b`
