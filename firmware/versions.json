@@ -1,18 +1,18 @@
 {
-  "latest": "v1.4.25",
+  "latest": "v1.4.27",
   "items": [
     {
-      "version": "v1.4.25",
-      "notes": "`v1.4.25`：取消翻页时钟铰链/折线显示，保留圆角黑底数字牌，并整理数字居中与顶部温湿度显示。",
+      "version": "v1.4.27",
+      "notes": "`v1.4.27`：降低未充电状态电池采样频率，低刷新页面空闲按键轮询放宽到 500ms，并增加 RLCD 局部/全屏刷新诊断日志。",
       "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.25.bin",
-        "sha256": "41f6e78b53041ed4608d007da9f79e79a073330e081c4ee9c81d82d1a9f68f9c",
-        "size": 5771104
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.27.bin",
+        "sha256": "1d7759c892282efa49c874b761e60ab816b5f11dfb7b75532834fa93415a6ae5",
+        "size": 5771984
       },
       "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.25_merged.bin",
-        "sha256": "a637e1a0db277edd3febd2b01b4f48e498e0ec4106a800056baa1955c1c9da0b",
-        "size": 5902176
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.27_merged.bin",
+        "sha256": "291b1775860c93d2cf47b87773faf09ee7b760ebff0d4266adbc8d47c456901b",
+        "size": 5903056
       }
     }
   ]
