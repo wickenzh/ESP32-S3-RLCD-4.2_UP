@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.10",
-  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.10/weather_clock_v1.4.10.bin",
-  "sha256": "9006469f8319940ef518425b74bd7d1f8cc055e67e1a3e8c717eb779c6f93942",
-  "size": 5728672,
-  "notes": "`v1.4.10`：新增天气看板页面并优化 5 天天气预报、空气质量、预警显示和整点报时 I2S 关闭稳定性。"
+  "version": "v1.4.25",
+  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.25.bin",
+  "sha256": "41f6e78b53041ed4608d007da9f79e79a073330e081c4ee9c81d82d1a9f68f9c",
+  "size": 5771104,
+  "notes": "`v1.4.25`：取消翻页时钟铰链/折线显示，保留圆角黑底数字牌，并整理数字居中与顶部温湿度显示。"
 }
