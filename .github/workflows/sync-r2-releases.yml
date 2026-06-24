@@ -24,6 +24,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           python3 <<'PY'
+          import base64
           import hashlib
           import json
           import os
@@ -103,7 +104,6 @@ jobs:
               return url.rsplit("/", 1)[0] + "/latest.json"
 
           def put_content(path, content_bytes, message):
-              import base64
               existing = http_json("GET", f"{api}/contents/{path}?ref=main", not_found_none=True)
               payload = {
                   "message": message,
@@ -118,52 +118,53 @@ jobs:
           items = sorted(data.get("items", []), key=lambda item: version_key(item.get("version", "")), reverse=True)[:keep]
           if not items:
               raise SystemExit("R2 versions.json has no items")
-
           latest = data.get("latest") or items[0].get("version")
           print(f"Syncing {len(items)} version(s), latest={latest}")
 
           latest_json_bytes = fetch(latest_url_from_versions(versions_url), timeout=60)
           put_content("firmware/latest.json", latest_json_bytes, f"Sync latest OTA manifest {latest}")
           put_content("firmware/versions.json", json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8") + b"\n", f"Sync OTA versions manifest {latest}")
-          readme = f"""# ESP32-S3 RLCD Weather Clock OTA
 
-这个仓库是设备 OTA / 上位机固件镜像仓库，不保存固件源码。
-
-## 当前版本
-
-- 最新版本：`{latest}`
-- Manifest：`firmware/latest.json`
-- 版本清单：`firmware/versions.json`
-
-## 文件用途
-
-- `firmware/latest.json`：设备端检查 OTA 时读取的最新版本清单。
-- `firmware/versions.json`：上位机读取最近版本列表，包含 app bin 和 merged bin 的 URL、大小和 SHA256。
-- GitHub Release 附件 `weather_clock_vX.X.X.bin`：设备 OTA 升级用 app 固件。
-- GitHub Release 附件 `weather_clock_vX.X.X_merged.bin`：串口完整刷写镜像，包含 bootloader、分区表、OTA data 和 app。
-
-## 同步来源
-
-本仓库由 GitHub Actions 自动从 Cloudflare R2 OTA 存储同步。
-
-- R2 是设备默认 OTA 下载源。
-- GitHub Release 是备份、历史下载和上位机读取的镜像。
-- 每次同步最多保留最近 `{keep}` 个版本。
-
-## 最近版本
-
-"""
+          readme_lines = [
+              "# ESP32-S3 RLCD Weather Clock OTA",
+              "",
+              "这个仓库是设备 OTA / 上位机固件镜像仓库，不保存固件源码。",
+              "",
+              "## 当前版本",
+              "",
+              f"- 最新版本：`{latest}`",
+              "- Manifest：`firmware/latest.json`",
+              "- 版本清单：`firmware/versions.json`",
+              "",
+              "## 文件用途",
+              "",
+              "- `firmware/latest.json`：设备端检查 OTA 时读取的最新版本清单。",
+              "- `firmware/versions.json`：上位机读取最近版本列表，包含 app bin 和 merged bin 的 URL、大小和 SHA256。",
+              "- GitHub Release 附件 `weather_clock_vX.X.X.bin`：设备 OTA 升级用 app 固件。",
+              "- GitHub Release 附件 `weather_clock_vX.X.X_merged.bin`：串口完整刷写镜像，包含 bootloader、分区表、OTA data 和 app。",
+              "",
+              "## 同步来源",
+              "",
+              "本仓库由 GitHub Actions 自动从 Cloudflare R2 OTA 存储同步。",
+              "",
+              "- R2 是设备默认 OTA 下载源。",
+              "- GitHub Release 是备份、历史下载和上位机读取的镜像。",
+              f"- 每次同步最多保留最近 `{keep}` 个版本。",
+              "",
+              "## 最近版本",
+              "",
+          ]
           for entry in items:
               ver = entry.get("version", "")
               notes = entry.get("notes", "")
               app = entry.get("app", {})
               merged = entry.get("merged", {})
-              readme += f"- `{ver}`：{notes}\n"
+              readme_lines.append(f"- `{ver}`：{notes}")
               if app.get("sha256"):
-                  readme += f"  - app sha256: `{app.get('sha256')}`\n"
+                  readme_lines.append(f"  - app sha256: `{app.get('sha256')}`")
               if merged.get("sha256"):
-                  readme += f"  - merged sha256: `{merged.get('sha256')}`\n"
-          put_content("README.md", readme.encode("utf-8"), f"Sync OTA README {latest}")
+                  readme_lines.append(f"  - merged sha256: `{merged.get('sha256')}`")
+          put_content("README.md", ("\n".join(readme_lines) + "\n").encode("utf-8"), f"Sync OTA README {latest}")
           print("Synced firmware/latest.json, firmware/versions.json and README.md")
 
           for item in items:
@@ -198,7 +199,6 @@ jobs:
               assets = http_json("GET", f"{api}/releases/{release['id']}/assets") or []
               assets_by_name = {asset.get("name"): asset for asset in assets}
               upload_url = release["upload_url"].split("{")[0]
-
               for kind, suffix in (("app", ".bin"), ("merged", "_merged.bin")):
                   meta = item.get(kind) or {}
                   url = meta.get("url")
@@ -212,14 +212,12 @@ jobs:
                   if existing and size_expected and int(existing.get("size") or 0) == size_expected:
                       print(f"kept {version} {name}")
                       continue
-
                   blob = fetch(url)
                   sha_actual = hashlib.sha256(blob).hexdigest()
                   if sha_actual != sha_expected:
                       raise SystemExit(f"sha256 mismatch for {name}: {sha_actual} != {sha_expected}")
                   if size_expected and len(blob) != size_expected:
                       raise SystemExit(f"size mismatch for {name}: {len(blob)} != {size_expected}")
-
                   if existing:
                       http_json("DELETE", f"{api}/releases/assets/{existing['id']}")
                       print(f"deleted stale {version} {name}")
