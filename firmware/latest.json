@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.27",
-  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.27.bin",
-  "sha256": "1d7759c892282efa49c874b761e60ab816b5f11dfb7b75532834fa93415a6ae5",
-  "size": 5771984,
-  "notes": "`v1.4.27`：降低未充电状态电池采样频率，低刷新页面空闲按键轮询放宽到 500ms，并增加 RLCD 局部/全屏刷新诊断日志。"
+  "version": "v1.4.31",
+  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.31/weather_clock_v1.4.31.bin",
+  "sha256": "f234ebc1cd7a3b2d0b4b5db52191641a6d807371238c2a5be9e3b3606f1ae6de",
+  "size": 5781792,
+  "notes": "`v1.4.31`：OTA 检查和安装支持 Cloudflare R2 与 GitHub OTA 双路径备份，发布流程默认同步两个 OTA 源。"
 }
