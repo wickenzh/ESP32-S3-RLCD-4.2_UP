@@ -180,21 +180,21 @@ jobs:
                   "- Merged bin: complete serial flash image\n\n"
                   f"Notes:\n{notes}\n"
               )
+              release_payload = {
+                  "name": version,
+                  "body": body,
+                  "draft": False,
+                  "prerelease": False,
+              }
+              if version == latest:
+                  release_payload["make_latest"] = "true"
+
               if release is None:
-                  release = http_json("POST", f"{api}/releases", {
-                      "tag_name": version,
-                      "name": version,
-                      "body": body,
-                      "draft": False,
-                      "prerelease": False,
-                  })
+                  create_payload = dict(release_payload)
+                  create_payload["tag_name"] = version
+                  release = http_json("POST", f"{api}/releases", create_payload)
               else:
-                  release = http_json("PATCH", f"{api}/releases/{release['id']}", {
-                      "name": version,
-                      "body": body,
-                      "draft": False,
-                      "prerelease": False,
-                  })
+                  release = http_json("PATCH", f"{api}/releases/{release['id']}", release_payload)
 
               assets = http_json("GET", f"{api}/releases/{release['id']}/assets") or []
               assets_by_name = {asset.get("name"): asset for asset in assets}
