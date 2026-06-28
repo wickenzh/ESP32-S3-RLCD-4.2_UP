@@ -1,6 +1,6 @@
 {
   "version": "v1.4.31",
-  "url": "https://github.com/wickenzh/ESP32-S3-RLCD-4.2_UP/releases/download/v1.4.31/weather_clock_v1.4.31.bin",
+  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.31.bin",
   "sha256": "f234ebc1cd7a3b2d0b4b5db52191641a6d807371238c2a5be9e3b3606f1ae6de",
   "size": 5781792,
   "notes": "`v1.4.31`：OTA 检查和安装支持 Cloudflare R2 与 GitHub OTA 双路径备份，发布流程默认同步两个 OTA 源。"
