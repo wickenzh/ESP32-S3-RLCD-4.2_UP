@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.31",
-  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.31.bin",
-  "sha256": "f234ebc1cd7a3b2d0b4b5db52191641a6d807371238c2a5be9e3b3606f1ae6de",
-  "size": 5781792,
-  "notes": "`v1.4.31`：OTA 检查和安装支持 Cloudflare R2 与 GitHub OTA 双路径备份，发布流程默认同步两个 OTA 源。"
+  "version": "v1.4.37",
+  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.37.bin",
+  "sha256": "40b0be29d8cef366f1340aa8e3d3477093d96a1e0230cb6840859868de4c66be",
+  "size": 5785104,
+  "notes": "`v1.4.37`：低风险维护发布：继续整理设置页菜单索引，网络和声音设置改用命名常量，降低后续菜单扩展时误改风险，功能和 UI 行为保持不变。"
 }
