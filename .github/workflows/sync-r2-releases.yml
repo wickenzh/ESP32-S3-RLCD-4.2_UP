@@ -185,9 +185,8 @@ jobs:
                   "body": body,
                   "draft": False,
                   "prerelease": False,
+                  "make_latest": "true" if version == latest else "false",
               }
-              if version == latest:
-                  release_payload["make_latest"] = "true"
 
               if release is None:
                   create_payload = dict(release_payload)
@@ -224,6 +223,15 @@ jobs:
                   encoded_name = urllib.parse.urlencode({"name": name})
                   http_json("POST", f"{upload_url}?{encoded_name}", raw=blob, extra_headers={"Content-Type": "application/octet-stream"}, timeout=300)
                   print(f"uploaded {version} {name} ({len(blob)} bytes)")
+
+          latest_release = http_json("GET", f"{api}/releases/tags/{latest}", not_found_none=True)
+          if latest_release:
+              http_json("PATCH", f"{api}/releases/{latest_release['id']}", {
+                  "draft": False,
+                  "prerelease": False,
+                  "make_latest": "true",
+              })
+              print(f"marked {latest} as latest release")
 
           print("R2 OTA Release sync complete")
           PY
