@@ -1,6 +1,90 @@
 {
-  "latest": "v1.4.31",
+  "latest": "v1.4.37",
   "items": [
+    {
+      "version": "v1.4.37",
+      "notes": "`v1.4.37`：低风险维护发布：继续整理设置页菜单索引，网络和声音设置改用命名常量，降低后续菜单扩展时误改风险，功能和 UI 行为保持不变。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.37.bin",
+        "sha256": "40b0be29d8cef366f1340aa8e3d3477093d96a1e0230cb6840859868de4c66be",
+        "size": 5785104
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.37_merged.bin",
+        "sha256": "ee5ad3670c52d5a04a73b9078a2e8277233305abb51af32087bdcd259e946fff",
+        "size": 5916176
+      }
+    },
+    {
+      "version": "v1.4.36",
+      "notes": "`v1.4.36`：低风险代码维护发布：集中工作页常量、页面名称、显示设置映射和系统设置索引，清理无用 include，保持现有功能和 UI 不变。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.36.bin",
+        "sha256": "d086e63981a6cb3fdbc662dfa4c9a6c18408275ce1099f75060437fdf512b836",
+        "size": 5785104
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.36_merged.bin",
+        "sha256": "7a0a0c071042588d472b4c4c58e38a6da31b5a6ff7226bcd0dd8637b3ba60dad",
+        "size": 5916176
+      }
+    },
+    {
+      "version": "v1.4.35",
+      "notes": "`v1.4.35`：合并手动天气城市配置；修复配网页中文城市输入与清除后同步逻辑；降低联网同步期间 RLCD SPI DMA 内存压力。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.35.bin",
+        "sha256": "ec555c50b53317690ca7abf488519ba3380ed718c33e566833c85150ae5d9576",
+        "size": 5785376
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.35_merged.bin",
+        "sha256": "8ac1834ce2d24eac7e07a67e106d8936d20363b9fa6c2eb29553cede5eea1df3",
+        "size": 5916448
+      }
+    },
+    {
+      "version": "v1.4.34",
+      "notes": "`v1.4.34`：低风险优化网络配置解析、每日文字失败日志、HTTP 响应预览和网络诊断日志。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.34.bin",
+        "sha256": "3e5c097f0836753a46551dd06c6ad6f2140b8067ef0b296fd352828ef882c13e",
+        "size": 5782208
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.34_merged.bin",
+        "sha256": "475f3d93bed362b6e9682285687ab2b8046a4bf5d21a9a80a45aca708bc49e4a",
+        "size": 5913280
+      }
+    },
+    {
+      "version": "v1.4.33",
+      "notes": "`v1.4.33`：补强 OTA 本地固件归档清理流程，旧归档文件异常时不影响当前版本发布。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.33.bin",
+        "sha256": "94a094e75028b20b973a4b195a692c9c39248f5e2981f1818149066b9b10350c",
+        "size": 5781856
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.33_merged.bin",
+        "sha256": "895b38de1be95e8eb9100e9f30ad37be48b880156ff3fe7008ca6d3b207872b0",
+        "size": 5912928
+      }
+    },
+    {
+      "version": "v1.4.32",
+      "notes": "`v1.4.32`：优化整点报时播放包络，降低首音炸音概率，并补强 OTA Worker 维护检查。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.32.bin",
+        "sha256": "8cb5b42a1d22f8c8186d6880b7c5d04eac7515e88c6629a0865c9fcb9e5e6077",
+        "size": 5781856
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.32_merged.bin",
+        "sha256": "e37d3a642827a70a2da712c1476c60446d8b2e66652c52f28754a96f9d851f9d",
+        "size": 5912928
+      }
+    },
     {
       "version": "v1.4.31",
       "notes": "`v1.4.31`：OTA 检查和安装支持 Cloudflare R2 与 GitHub OTA 双路径备份，发布流程默认同步两个 OTA 源。",
@@ -55,90 +139,6 @@
         "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.28_merged.bin",
         "sha256": "b8cd6ebadc82d39c85c6f637ddba79e37c2b6383284adc5e9d6ca5d3bb939809",
         "size": 5911536
-      }
-    },
-    {
-      "version": "v1.4.27",
-      "notes": "`v1.4.27`：降低未充电状态电池采样频率，低刷新页面空闲按键轮询放宽到 500ms，并增加 RLCD 局部/全屏刷新诊断日志。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.27.bin",
-        "sha256": "1d7759c892282efa49c874b761e60ab816b5f11dfb7b75532834fa93415a6ae5",
-        "size": 5771984
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.27_merged.bin",
-        "sha256": "291b1775860c93d2cf47b87773faf09ee7b760ebff0d4266adbc8d47c456901b",
-        "size": 5903056
-      }
-    },
-    {
-      "version": "v1.4.26",
-      "notes": "`v1.4.26`：低风险收敛功耗与稳定性，降低翻页时钟温湿度刷新频率，补强联网同步失败收尾，并保留 OTA 下载期 RAM/DMA 保护策略。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.26.bin",
-        "sha256": "b7c445dd400eb73c24afb89c1bac36b22df3056365c2a0394959c064f575b839",
-        "size": 5771216
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.26_merged.bin",
-        "sha256": "cb828a73b4b59f6164e8ae28e23a9c1cd122b0ddea47e3708b5767af5f187c27",
-        "size": 5902288
-      }
-    },
-    {
-      "version": "v1.4.25",
-      "notes": "`v1.4.25`：取消翻页时钟铰链/折线显示，保留圆角黑底数字牌，并整理数字居中与顶部温湿度显示。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.25.bin",
-        "sha256": "41f6e78b53041ed4608d007da9f79e79a073330e081c4ee9c81d82d1a9f68f9c",
-        "size": 5771104
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.25_merged.bin",
-        "sha256": "a637e1a0db277edd3febd2b01b4f48e498e0ec4106a800056baa1955c1c9da0b",
-        "size": 5902176
-      }
-    },
-    {
-      "version": "v1.4.24",
-      "notes": "`v1.4.24`：微调翻页时钟铰链位置，取消翻页动画并保留稳定秒级局部刷新。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.24.bin",
-        "sha256": "a9623dd4b06e99f5cf5b2a1e2cd28ba1c77466aaf464f776628445b932a49a1f",
-        "size": 5771312
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.24_merged.bin",
-        "sha256": "9f382d25418e6dd2e044389a38071e0fa295829bd7637ccf2249b0a8201009eb",
-        "size": 5902384
-      }
-    },
-    {
-      "version": "v1.4.23",
-      "notes": "`v1.4.23`：新增翻页时钟页面，修正工作页状态栏对齐，并接入 6 页面顺序管理。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.23.bin",
-        "sha256": "5f0878e94dd0a380288ea41a0ad908d408cdf97f11ceab550aaa1dc7194133a4",
-        "size": 5771072
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.23_merged.bin",
-        "sha256": "8aa4b33c8b679e3108dc7a21f24b4c9449a1f6fbb1fdc42f699083d4574ad897",
-        "size": 5902144
-      }
-    },
-    {
-      "version": "v1.4.22",
-      "notes": "`v1.4.22`：统一非天气时钟工作页顶部状态栏，增加分钟时间并在所有工作页显示声音/Wi-Fi 状态图标。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.22.bin",
-        "sha256": "9549992fdeeecbb6471994fcc17aef3f91cf57d99a579665d05ed03e829202bc",
-        "size": 5763776
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.22_merged.bin",
-        "sha256": "2fea3697d04471aebb8dec493e4a60c23d614983e7b02b8f767921f3c5f4a997",
-        "size": 5894848
       }
     }
   ]
