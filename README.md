@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.4.37`
+- 最新版本：`v1.4.38`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -25,6 +25,9 @@
 
 ## 最近版本
 
+- `v1.4.38`：`v1.4.38`：低风险维护发布：整理配网页表单字段匹配与 URL 解码边界，并汇总近期 NTP、HTTP、网络诊断和每日文字解析 helper 化优化；功能、UI 和协议保持不变。
+  - app sha256: `2ee09a2963b490c77f1bf422bbf307125bc288b84791ae99a331479cde4fa071`
+  - merged sha256: `60374102e29a93897fad154833c290f2abc20ccf7ac01d677934f7efee48f413`
 - `v1.4.37`：`v1.4.37`：低风险维护发布：继续整理设置页菜单索引，网络和声音设置改用命名常量，降低后续菜单扩展时误改风险，功能和 UI 行为保持不变。
   - app sha256: `40b0be29d8cef366f1340aa8e3d3477093d96a1e0230cb6840859868de4c66be`
   - merged sha256: `ee5ad3670c52d5a04a73b9078a2e8277233305abb51af32087bdcd259e946fff`
@@ -52,6 +55,3 @@
 - `v1.4.29`：`v1.4.29`：增强 SDL 页面预览生成流程，默认适配无人值守环境，并在截图转换成功后再替换目标预览图。
   - app sha256: `a8bf3d8db239ef004f80fb7f6f8f8ae66312846d0ac85fa2d2fcdef15b6f88f9`
   - merged sha256: `eb5f0a9b0fc273ed51f0704a9d9898a607aa9e161ba5d49719e74e05d7bf94d5`
-- `v1.4.28`：`v1.4.28`：低风险代码维护优化，集中电池百分比常量、NTP/HTTP/诊断配置常量，并增强发布脚本环境检查。
-  - app sha256: `14131624e7f7831968664a2817c04fe8c76544e6e24d698a2687861c21ce6bf2`
-  - merged sha256: `b8cd6ebadc82d39c85c6f637ddba79e37c2b6383284adc5e9d6ca5d3bb939809`
