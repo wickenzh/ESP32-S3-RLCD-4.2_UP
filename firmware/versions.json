@@ -1,6 +1,20 @@
 {
-  "latest": "v1.4.37",
+  "latest": "v1.4.38",
   "items": [
+    {
+      "version": "v1.4.38",
+      "notes": "`v1.4.38`：低风险维护发布：整理配网页表单字段匹配与 URL 解码边界，并汇总近期 NTP、HTTP、网络诊断和每日文字解析 helper 化优化；功能、UI 和协议保持不变。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.38.bin",
+        "sha256": "2ee09a2963b490c77f1bf422bbf307125bc288b84791ae99a331479cde4fa071",
+        "size": 5787920
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.38_merged.bin",
+        "sha256": "60374102e29a93897fad154833c290f2abc20ccf7ac01d677934f7efee48f413",
+        "size": 5918992
+      }
+    },
     {
       "version": "v1.4.37",
       "notes": "`v1.4.37`：低风险维护发布：继续整理设置页菜单索引，网络和声音设置改用命名常量，降低后续菜单扩展时误改风险，功能和 UI 行为保持不变。",
@@ -124,20 +138,6 @@
       "merged": {
         "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.29_merged.bin",
         "sha256": "eb5f0a9b0fc273ed51f0704a9d9898a607aa9e161ba5d49719e74e05d7bf94d5",
-        "size": 5911536
-      }
-    },
-    {
-      "version": "v1.4.28",
-      "notes": "`v1.4.28`：低风险代码维护优化，集中电池百分比常量、NTP/HTTP/诊断配置常量，并增强发布脚本环境检查。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.28.bin",
-        "sha256": "14131624e7f7831968664a2817c04fe8c76544e6e24d698a2687861c21ce6bf2",
-        "size": 5780464
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.28_merged.bin",
-        "sha256": "b8cd6ebadc82d39c85c6f637ddba79e37c2b6383284adc5e9d6ca5d3bb939809",
         "size": 5911536
       }
     }
