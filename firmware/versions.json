@@ -1,6 +1,34 @@
 {
-  "latest": "v1.4.38",
+  "latest": "v1.4.40",
   "items": [
+    {
+      "version": "v1.4.40",
+      "notes": "`v1.4.40`：低风险维护发布：继续集中设置页、网络检测和配网页 buffer/辅助控件维护路径，减少重复边界处理，保持功能、UI、协议和使用方式不变。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.40.bin",
+        "sha256": "79170d05e487937c509f8066b1eb30e87d396aa594402e0475e22f72852a962a",
+        "size": 5790816
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.40_merged.bin",
+        "sha256": "d554c6ed9dea53bab43d9e08c370176dba3767ce48c0a1c7e4c622cad4391fc7",
+        "size": 5921888
+      }
+    },
+    {
+      "version": "v1.4.39",
+      "notes": "`v1.4.39`：低风险维护发布：集中配网页、UI、OTA、自定义资源、GitHub 源码同步和预览脚本的 buffer/常量与资源释放细节，保持功能、UI、协议和使用方式不变。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.39.bin",
+        "sha256": "251ae1adf4fc7460c64cc92d325df5d87ccfe1a7e6b6a24b26ecbd75f485c8ef",
+        "size": 5789840
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.39_merged.bin",
+        "sha256": "26a9528a3e6568a33828bc9b39b9eda3cdf9cf24dc2aae0eebb4a6630e06cf7f",
+        "size": 5920912
+      }
+    },
     {
       "version": "v1.4.38",
       "notes": "`v1.4.38`：低风险维护发布：整理配网页表单字段匹配与 URL 解码边界，并汇总近期 NTP、HTTP、网络诊断和每日文字解析 helper 化优化；功能、UI 和协议保持不变。",
@@ -111,34 +139,6 @@
         "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.31_merged.bin",
         "sha256": "8cb4d2b808fc35b0ff74c259fb646e879d83176de5adc7dacb3da036d7c8aa5f",
         "size": 5912864
-      }
-    },
-    {
-      "version": "v1.4.30",
-      "notes": "`v1.4.30`：增强预览生成脚本参数校验，并补强发布/自动化入口的本机工具和子脚本前置检查，避免发布流程静默忽略异常输入或在后期才暴露环境问题。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.30.bin",
-        "sha256": "b86559e9b5cbed05f72b6bd894ecc9d42620acd6a027d9cb3a05005891aa8227",
-        "size": 5780464
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.30_merged.bin",
-        "sha256": "3d2ec410882f62b224175accbcafc195d361d73ca679711bc3eac1bfae4bd2af",
-        "size": 5911536
-      }
-    },
-    {
-      "version": "v1.4.29",
-      "notes": "`v1.4.29`：增强 SDL 页面预览生成流程，默认适配无人值守环境，并在截图转换成功后再替换目标预览图。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.29.bin",
-        "sha256": "a8bf3d8db239ef004f80fb7f6f8f8ae66312846d0ac85fa2d2fcdef15b6f88f9",
-        "size": 5780464
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.29_merged.bin",
-        "sha256": "eb5f0a9b0fc273ed51f0704a9d9898a607aa9e161ba5d49719e74e05d7bf94d5",
-        "size": 5911536
       }
     }
   ]
