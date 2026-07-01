@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.4.38`
+- 最新版本：`v1.4.40`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -25,6 +25,12 @@
 
 ## 最近版本
 
+- `v1.4.40`：`v1.4.40`：低风险维护发布：继续集中设置页、网络检测和配网页 buffer/辅助控件维护路径，减少重复边界处理，保持功能、UI、协议和使用方式不变。
+  - app sha256: `79170d05e487937c509f8066b1eb30e87d396aa594402e0475e22f72852a962a`
+  - merged sha256: `d554c6ed9dea53bab43d9e08c370176dba3767ce48c0a1c7e4c622cad4391fc7`
+- `v1.4.39`：`v1.4.39`：低风险维护发布：集中配网页、UI、OTA、自定义资源、GitHub 源码同步和预览脚本的 buffer/常量与资源释放细节，保持功能、UI、协议和使用方式不变。
+  - app sha256: `251ae1adf4fc7460c64cc92d325df5d87ccfe1a7e6b6a24b26ecbd75f485c8ef`
+  - merged sha256: `26a9528a3e6568a33828bc9b39b9eda3cdf9cf24dc2aae0eebb4a6630e06cf7f`
 - `v1.4.38`：`v1.4.38`：低风险维护发布：整理配网页表单字段匹配与 URL 解码边界，并汇总近期 NTP、HTTP、网络诊断和每日文字解析 helper 化优化；功能、UI 和协议保持不变。
   - app sha256: `2ee09a2963b490c77f1bf422bbf307125bc288b84791ae99a331479cde4fa071`
   - merged sha256: `60374102e29a93897fad154833c290f2abc20ccf7ac01d677934f7efee48f413`
@@ -49,9 +55,3 @@
 - `v1.4.31`：`v1.4.31`：OTA 检查和安装支持 Cloudflare R2 与 GitHub OTA 双路径备份，发布流程默认同步两个 OTA 源。
   - app sha256: `f234ebc1cd7a3b2d0b4b5db52191641a6d807371238c2a5be9e3b3606f1ae6de`
   - merged sha256: `8cb4d2b808fc35b0ff74c259fb646e879d83176de5adc7dacb3da036d7c8aa5f`
-- `v1.4.30`：`v1.4.30`：增强预览生成脚本参数校验，并补强发布/自动化入口的本机工具和子脚本前置检查，避免发布流程静默忽略异常输入或在后期才暴露环境问题。
-  - app sha256: `b86559e9b5cbed05f72b6bd894ecc9d42620acd6a027d9cb3a05005891aa8227`
-  - merged sha256: `3d2ec410882f62b224175accbcafc195d361d73ca679711bc3eac1bfae4bd2af`
-- `v1.4.29`：`v1.4.29`：增强 SDL 页面预览生成流程，默认适配无人值守环境，并在截图转换成功后再替换目标预览图。
-  - app sha256: `a8bf3d8db239ef004f80fb7f6f8f8ae66312846d0ac85fa2d2fcdef15b6f88f9`
-  - merged sha256: `eb5f0a9b0fc273ed51f0704a9d9898a607aa9e161ba5d49719e74e05d7bf94d5`
