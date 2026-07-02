@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.4.41`
+- 最新版本：`v1.4.42`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -25,6 +25,9 @@
 
 ## 最近版本
 
+- `v1.4.42`：`v1.4.42`：v1.4.42: Low-risk maintenance optimizations
+  - app sha256: `b912184f5ccda05437e40ca895b01b179117eecce7d271c2530f9700b3b48c8f`
+  - merged sha256: `0a8c3e5f5703e1280f1ba421e9c99863a22f22b8bafeb0d5af508547c8eca179`
 - `v1.4.41`：`v1.4.41`：v1.4.41: 翻页时钟底部温湿度改为黑底反显信息栏。
   - app sha256: `018b98fbb9a5d1b4ba27f704efa0479397714702cbd6f088faed3de79ac08fd3`
   - merged sha256: `46b435ea56adfa76f5202ed37a34ddb75f37965e2ea0e17f68c8546a1d0edc8d`
@@ -52,6 +55,3 @@
 - `v1.4.33`：`v1.4.33`：补强 OTA 本地固件归档清理流程，旧归档文件异常时不影响当前版本发布。
   - app sha256: `94a094e75028b20b973a4b195a692c9c39248f5e2981f1818149066b9b10350c`
   - merged sha256: `895b38de1be95e8eb9100e9f30ad37be48b880156ff3fe7008ca6d3b207872b0`
-- `v1.4.32`：`v1.4.32`：优化整点报时播放包络，降低首音炸音概率，并补强 OTA Worker 维护检查。
-  - app sha256: `8cb5b42a1d22f8c8186d6880b7c5d04eac7515e88c6629a0865c9fcb9e5e6077`
-  - merged sha256: `e37d3a642827a70a2da712c1476c60446d8b2e66652c52f28754a96f9d851f9d`
