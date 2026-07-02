@@ -1,6 +1,20 @@
 {
-  "latest": "v1.4.41",
+  "latest": "v1.4.42",
   "items": [
+    {
+      "version": "v1.4.42",
+      "notes": "`v1.4.42`：v1.4.42: Low-risk maintenance optimizations",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.42.bin",
+        "sha256": "b912184f5ccda05437e40ca895b01b179117eecce7d271c2530f9700b3b48c8f",
+        "size": 5791120
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.42_merged.bin",
+        "sha256": "0a8c3e5f5703e1280f1ba421e9c99863a22f22b8bafeb0d5af508547c8eca179",
+        "size": 5922192
+      }
+    },
     {
       "version": "v1.4.41",
       "notes": "`v1.4.41`：v1.4.41: 翻页时钟底部温湿度改为黑底反显信息栏。",
@@ -124,20 +138,6 @@
       "merged": {
         "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.33_merged.bin",
         "sha256": "895b38de1be95e8eb9100e9f30ad37be48b880156ff3fe7008ca6d3b207872b0",
-        "size": 5912928
-      }
-    },
-    {
-      "version": "v1.4.32",
-      "notes": "`v1.4.32`：优化整点报时播放包络，降低首音炸音概率，并补强 OTA Worker 维护检查。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.32.bin",
-        "sha256": "8cb5b42a1d22f8c8186d6880b7c5d04eac7515e88c6629a0865c9fcb9e5e6077",
-        "size": 5781856
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.32_merged.bin",
-        "sha256": "e37d3a642827a70a2da712c1476c60446d8b2e66652c52f28754a96f9d851f9d",
         "size": 5912928
       }
     }
