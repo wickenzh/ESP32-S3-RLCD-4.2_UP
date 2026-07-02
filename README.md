@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.4.40`
+- 最新版本：`v1.4.41`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -25,6 +25,9 @@
 
 ## 最近版本
 
+- `v1.4.41`：`v1.4.41`：v1.4.41: 翻页时钟底部温湿度改为黑底反显信息栏。
+  - app sha256: `018b98fbb9a5d1b4ba27f704efa0479397714702cbd6f088faed3de79ac08fd3`
+  - merged sha256: `46b435ea56adfa76f5202ed37a34ddb75f37965e2ea0e17f68c8546a1d0edc8d`
 - `v1.4.40`：`v1.4.40`：低风险维护发布：继续集中设置页、网络检测和配网页 buffer/辅助控件维护路径，减少重复边界处理，保持功能、UI、协议和使用方式不变。
   - app sha256: `79170d05e487937c509f8066b1eb30e87d396aa594402e0475e22f72852a962a`
   - merged sha256: `d554c6ed9dea53bab43d9e08c370176dba3767ce48c0a1c7e4c622cad4391fc7`
@@ -52,6 +55,3 @@
 - `v1.4.32`：`v1.4.32`：优化整点报时播放包络，降低首音炸音概率，并补强 OTA Worker 维护检查。
   - app sha256: `8cb5b42a1d22f8c8186d6880b7c5d04eac7515e88c6629a0865c9fcb9e5e6077`
   - merged sha256: `e37d3a642827a70a2da712c1476c60446d8b2e66652c52f28754a96f9d851f9d`
-- `v1.4.31`：`v1.4.31`：OTA 检查和安装支持 Cloudflare R2 与 GitHub OTA 双路径备份，发布流程默认同步两个 OTA 源。
-  - app sha256: `f234ebc1cd7a3b2d0b4b5db52191641a6d807371238c2a5be9e3b3606f1ae6de`
-  - merged sha256: `8cb4d2b808fc35b0ff74c259fb646e879d83176de5adc7dacb3da036d7c8aa5f`
