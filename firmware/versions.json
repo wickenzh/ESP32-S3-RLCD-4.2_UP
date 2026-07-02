@@ -1,6 +1,20 @@
 {
-  "latest": "v1.4.40",
+  "latest": "v1.4.41",
   "items": [
+    {
+      "version": "v1.4.41",
+      "notes": "`v1.4.41`：v1.4.41: 翻页时钟底部温湿度改为黑底反显信息栏。",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.41.bin",
+        "sha256": "018b98fbb9a5d1b4ba27f704efa0479397714702cbd6f088faed3de79ac08fd3",
+        "size": 5789808
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.41_merged.bin",
+        "sha256": "46b435ea56adfa76f5202ed37a34ddb75f37965e2ea0e17f68c8546a1d0edc8d",
+        "size": 5920880
+      }
+    },
     {
       "version": "v1.4.40",
       "notes": "`v1.4.40`：低风险维护发布：继续集中设置页、网络检测和配网页 buffer/辅助控件维护路径，减少重复边界处理，保持功能、UI、协议和使用方式不变。",
@@ -125,20 +139,6 @@
         "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.32_merged.bin",
         "sha256": "e37d3a642827a70a2da712c1476c60446d8b2e66652c52f28754a96f9d851f9d",
         "size": 5912928
-      }
-    },
-    {
-      "version": "v1.4.31",
-      "notes": "`v1.4.31`：OTA 检查和安装支持 Cloudflare R2 与 GitHub OTA 双路径备份，发布流程默认同步两个 OTA 源。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.31.bin",
-        "sha256": "f234ebc1cd7a3b2d0b4b5db52191641a6d807371238c2a5be9e3b3606f1ae6de",
-        "size": 5781792
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.31_merged.bin",
-        "sha256": "8cb4d2b808fc35b0ff74c259fb646e879d83176de5adc7dacb3da036d7c8aa5f",
-        "size": 5912864
       }
     }
   ]
