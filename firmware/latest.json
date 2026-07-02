@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.41",
-  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.41.bin",
-  "sha256": "018b98fbb9a5d1b4ba27f704efa0479397714702cbd6f088faed3de79ac08fd3",
-  "size": 5789808,
-  "notes": "`v1.4.41`：v1.4.41: 翻页时钟底部温湿度改为黑底反显信息栏。"
+  "version": "v1.4.42",
+  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.42.bin",
+  "sha256": "b912184f5ccda05437e40ca895b01b179117eecce7d271c2530f9700b3b48c8f",
+  "size": 5791120,
+  "notes": "`v1.4.42`：v1.4.42: Low-risk maintenance optimizations"
 }
