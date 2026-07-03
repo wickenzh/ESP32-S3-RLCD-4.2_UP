@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.4.42`
+- 最新版本：`v1.4.45`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -25,6 +25,15 @@
 
 ## 最近版本
 
+- `v1.4.45`：`v1.4.45`：完整维护发布：翻页时钟底部 UI 完成一轮整理，温湿度改为覆盖小时与分钟区域的黑底反显面板，支持上下排列和舒适度表情，秒牌下方新增独立日期/农历反显框；优化记录按日期拆分，优化流水线增加中文发布说明校验、提交字段常量和候选扫描误报过滤；继续收敛 OTA、QWeather、每日文字、HTTP、NTP、网络检测、配网、音频、电池、电源管理、温湿度历史、自定义资源、按键、启动入口、设置页和 UI 主循环中的固定文案、日志文本、NVS key、表单字段、页面编号与布局常量校验，后续新增页面、接口或文案时更容易在编译期发现漏维护问题，固件运行逻辑、OTA 协议、分区表和用户操作流程保持不变。
+  - app sha256: `4587708dcd8667c9972375ad716d99f5726909c5f47889991358a6cc8c7de7dc`
+  - merged sha256: `77e969d4c193ebb67656d5555f3702e06bde63b7d2aca056e4fadaca1eff1691`
+- `v1.4.44`：`v1.4.44`：v1.4.44: Wi-Fi portal fixed text guard and low-risk maintenance
+  - app sha256: `55645904a8aae4b56af9191476c7f43945a67543335d1fd9865e91c1447c2fb5`
+  - merged sha256: `13aa13a6fa1ebb4dd01df37318426cf092bd69e90d967d66ea162b6318b45ddc`
+- `v1.4.43`：`v1.4.43`：v1.4.43: OTA status string guard and low-risk maintenance
+  - app sha256: `a8c3b2cd3f8a7a10e42662110e97d1e001064ce5d04f6f482b0464cedd8af138`
+  - merged sha256: `edfef015c3217199439db9d1e05db99f5db677c2c8637158f79bc1ac6158a9fc`
 - `v1.4.42`：`v1.4.42`：v1.4.42: Low-risk maintenance optimizations
   - app sha256: `b912184f5ccda05437e40ca895b01b179117eecce7d271c2530f9700b3b48c8f`
   - merged sha256: `0a8c3e5f5703e1280f1ba421e9c99863a22f22b8bafeb0d5af508547c8eca179`
@@ -46,12 +55,3 @@
 - `v1.4.36`：`v1.4.36`：低风险代码维护发布：集中工作页常量、页面名称、显示设置映射和系统设置索引，清理无用 include，保持现有功能和 UI 不变。
   - app sha256: `d086e63981a6cb3fdbc662dfa4c9a6c18408275ce1099f75060437fdf512b836`
   - merged sha256: `7a0a0c071042588d472b4c4c58e38a6da31b5a6ff7226bcd0dd8637b3ba60dad`
-- `v1.4.35`：`v1.4.35`：合并手动天气城市配置；修复配网页中文城市输入与清除后同步逻辑；降低联网同步期间 RLCD SPI DMA 内存压力。
-  - app sha256: `ec555c50b53317690ca7abf488519ba3380ed718c33e566833c85150ae5d9576`
-  - merged sha256: `8ac1834ce2d24eac7e07a67e106d8936d20363b9fa6c2eb29553cede5eea1df3`
-- `v1.4.34`：`v1.4.34`：低风险优化网络配置解析、每日文字失败日志、HTTP 响应预览和网络诊断日志。
-  - app sha256: `3e5c097f0836753a46551dd06c6ad6f2140b8067ef0b296fd352828ef882c13e`
-  - merged sha256: `475f3d93bed362b6e9682285687ab2b8046a4bf5d21a9a80a45aca708bc49e4a`
-- `v1.4.33`：`v1.4.33`：补强 OTA 本地固件归档清理流程，旧归档文件异常时不影响当前版本发布。
-  - app sha256: `94a094e75028b20b973a4b195a692c9c39248f5e2981f1818149066b9b10350c`
-  - merged sha256: `895b38de1be95e8eb9100e9f30ad37be48b880156ff3fe7008ca6d3b207872b0`
