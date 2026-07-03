@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.42",
-  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.42.bin",
-  "sha256": "b912184f5ccda05437e40ca895b01b179117eecce7d271c2530f9700b3b48c8f",
-  "size": 5791120,
-  "notes": "`v1.4.42`：v1.4.42: Low-risk maintenance optimizations"
+  "version": "v1.4.45",
+  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.45.bin",
+  "sha256": "4587708dcd8667c9972375ad716d99f5726909c5f47889991358a6cc8c7de7dc",
+  "size": 5793344,
+  "notes": "`v1.4.45`：完整维护发布：翻页时钟底部 UI 完成一轮整理，温湿度改为覆盖小时与分钟区域的黑底反显面板，支持上下排列和舒适度表情，秒牌下方新增独立日期/农历反显框；优化记录按日期拆分，优化流水线增加中文发布说明校验、提交字段常量和候选扫描误报过滤；继续收敛 OTA、QWeather、每日文字、HTTP、NTP、网络检测、配网、音频、电池、电源管理、温湿度历史、自定义资源、按键、启动入口、设置页和 UI 主循环中的固定文案、日志文本、NVS key、表单字段、页面编号与布局常量校验，后续新增页面、接口或文案时更容易在编译期发现漏维护问题，固件运行逻辑、OTA 协议、分区表和用户操作流程保持不变。"
 }
