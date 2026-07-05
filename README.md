@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.4.48`
+- 最新版本：`v1.4.49`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -25,6 +25,9 @@
 
 ## 最近版本
 
+- `v1.4.49`：`v1.4.49`：<br>1. 修复设置页页面顺序排序时偶发误返回工作页的问题：设置页 30 秒无操作超时改为使用最新 tick 和有符号差值判断，避免按键任务刚刷新活动时间后被 UI 主循环旧 tick 误判超时。<br>2. 补强设置页 KEY 短按活动计时：页面顺序模式下切换选择项也会刷新最后活动时间，确保用户正在操作时不会被当作无操作。<br>3. 继续同步维护文档和优化日志：补充设置页跨任务超时判断规则，后续调整按键或设置页状态机时避免回退到旧判断方式。<br>4. 完整验证并发布：重新构建固件和 SDL，生成发布产物、预览图、Gitea Release、Cloudflare R2 OTA，并同步 GitHub 源码仓库。
+  - app sha256: `6498da64a30a9492784f621623536a4bca3aa3b725fe95e1f153178db04d116c`
+  - merged sha256: `4044358c34b4c034b6083162f2aa758e698cbb8bb1eb7b8978cd2d6d3e67077a`
 - `v1.4.48`：`v1.4.48`：1. 修复温湿时钟秒级刷新偶发跳秒：温湿时钟页面活动时使用更短的 UI 轮询上限，秒牌仍保持秒值变化时局部刷新，不改变页面布局。<br>2. 修正状态栏 Wi-Fi 图标显示条件：天气时钟和所有工作页统一改为 Wi-Fi 已连接并获取 IP 后显示，断开后立即隐藏。<br>3. 完整验证并发布：同步更新固件、SDL、Gitea Release、Cloudflare R2 OTA 和 GitHub 源码仓库。
   - app sha256: `aa03a5b7d6f4dfc253de6e2fb012effdad927c8d3e0437b3dcf7d0712e564b78`
   - merged sha256: `022df528c5d6e65d90bec5135cd27740b81cb93ae486e79be4c510373edaa6a3`
@@ -52,6 +55,3 @@
 - `v1.4.40`：`v1.4.40`：低风险维护发布：继续集中设置页、网络检测和配网页 buffer/辅助控件维护路径，减少重复边界处理，保持功能、UI、协议和使用方式不变。
   - app sha256: `79170d05e487937c509f8066b1eb30e87d396aa594402e0475e22f72852a962a`
   - merged sha256: `d554c6ed9dea53bab43d9e08c370176dba3767ce48c0a1c7e4c622cad4391fc7`
-- `v1.4.39`：`v1.4.39`：低风险维护发布：集中配网页、UI、OTA、自定义资源、GitHub 源码同步和预览脚本的 buffer/常量与资源释放细节，保持功能、UI、协议和使用方式不变。
-  - app sha256: `251ae1adf4fc7460c64cc92d325df5d87ccfe1a7e6b6a24b26ecbd75f485c8ef`
-  - merged sha256: `26a9528a3e6568a33828bc9b39b9eda3cdf9cf24dc2aae0eebb4a6630e06cf7f`
