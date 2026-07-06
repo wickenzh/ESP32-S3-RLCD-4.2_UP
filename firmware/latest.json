@@ -1,7 +1,7 @@
 {
-  "version": "v1.4.49",
-  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.49.bin",
-  "sha256": "6498da64a30a9492784f621623536a4bca3aa3b725fe95e1f153178db04d116c",
-  "size": 5805904,
-  "notes": "`v1.4.49`：<br>1. 修复设置页页面顺序排序时偶发误返回工作页的问题：设置页 30 秒无操作超时改为使用最新 tick 和有符号差值判断，避免按键任务刚刷新活动时间后被 UI 主循环旧 tick 误判超时。<br>2. 补强设置页 KEY 短按活动计时：页面顺序模式下切换选择项也会刷新最后活动时间，确保用户正在操作时不会被当作无操作。<br>3. 继续同步维护文档和优化日志：补充设置页跨任务超时判断规则，后续调整按键或设置页状态机时避免回退到旧判断方式。<br>4. 完整验证并发布：重新构建固件和 SDL，生成发布产物、预览图、Gitea Release、Cloudflare R2 OTA，并同步 GitHub 源码仓库。"
+  "version": "v1.4.54",
+  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.54.bin",
+  "sha256": "b0e52a4083abd278fe3623e2bc55d6480dc0c24c868dccbbfa45aee3ac26f7b0",
+  "size": 5805872,
+  "notes": "`v1.4.54`：\n  1. 收拢版本同步脚本检查：版本同步脚本的依赖命令和目标版本文件改为集中清单维护，后续新增版本文件时更不容易漏改。\n  2. 收拢 R2 OTA 发布检查：R2 发布脚本集中维护依赖命令、Worker 源文件和构建产物脚本路径，并在 Cloudflare secret 解析失败时提前给出明确错误。\n  3. 收拢 GitHub OTA 备用源检查：GitHub OTA 发布脚本集中维护依赖命令和必要子脚本，减少备用源发布流程的重复检查代码。\n  4. 收拢 OTA bin 归档检查：本地 OTA bin 归档脚本集中维护依赖命令、构建产物和保留数量校验，方便后续排查固件补传问题。\n  5. 收拢 OTA manifest 生成检查：OTA manifest 脚本集中维护依赖命令、app bin 和发布说明 helper 路径，保持 `latest.json` 生成逻辑更清楚。\n  6. 修复 Gitea Release 正文变量边界：附件文件名变量增加显式边界，避免中文标点触发 shell 变量解析错误。\n  7. 完整验证并发布：重新构建固件和 SDL，生成发布产物、预览图、Gitea Release、Cloudflare R2 OTA，并同步 GitHub 源码仓库。"
 }
