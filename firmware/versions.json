@@ -1,6 +1,34 @@
 {
-  "latest": "v1.5.7",
+  "latest": "v1.5.9",
   "items": [
+    {
+      "version": "v1.5.9",
+      "notes": "`v1.5.9`：\n  1. 继续按稳定优先原则拆分启动联网、后台同步和可见页数据补拉职责；天气与每日文字仍由单一常驻网络任务串行错峰，页面 UI 不直接执行 HTTP/HTTPS。\n  2. 加固冷启动资源分配：启动动画阶段不再执行页面 HTTPS，天气、预警、预报、空气质量和每日文字在启动后错峰补齐，并在开机前一分钟持续检查 internal/DMA 连续内存，降低 TLS、JSON、RLCD 同时占用造成的峰值压力。\n  3. 统一 HTTPS/WSS 资源保护：天气、每日文字、小智激活和实时会话共用显示 DMA 保守模式、内存快照和全局 HTTP 事务锁；OTA 大文件下载也纳入同一事务互斥，避免多个 TLS 会话并存。\n  4. 收敛 Wi-Fi 与配网生命周期：初始化按 netif、driver、事件注册和 APSTA 配置分阶段执行，失败时完整逆序回滚；运行期配网与冷启动配网复用 SoftAP 配置、连接返回码处理和明确失败日志。\n  5. 拆分天气与 QWeather 基础职责：动态响应缓冲使用作用域释放，天气定位、城市查询、实时天气、预警、预报和空气质量继续保持原请求顺序、旧缓存保留和整批提交语义。\n  6. 拆分 OTA 清单客户端、固件流下载和进度上报职责；来源顺序、重定向、SHA256、双 OTA 写入、R2 主源、GitHub 备用源、下载 UI、确认超时、成功提示和重启时序保持不变，并补齐关键失败阶段日志。\n  7. 加固小智 AI 网络与协议边界：激活客户端、WebSocket…",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.5.9.bin",
+        "sha256": "cd21709fd9ac0ea232563b56f0f7db9093a59ccc40824d568d2c22dcb7b9f942",
+        "size": 6209104
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.5.9_merged.bin",
+        "sha256": "4411a1aebb13423a2b0f5cbeca6cdd87825ecf8a0ea6d654a0857d44dbd3bde3",
+        "size": 16509951
+      }
+    },
+    {
+      "version": "v1.5.8",
+      "notes": "`v1.5.8`：\n  1. 继续按稳定优先原则精细化主程序结构，拆分启动联网、后台同步、天气批量更新、QWeather URL/城市/实时天气/预警解析等职责；接口调用顺序、缓存提交、失败退避和 Wi-Fi 生命周期保持不变。\n  2. 收敛联网配置与 NVS 维护边界：页面、整点提醒、闹钟、天气城市、恢复出厂和小智激活存储分别维护，继续使用原 namespace、key、值类型、提交条件和恢复规则。\n  3. 加固小智 AI 可维护性：拆分激活客户端、绑定码播报、服务端 hello、入站事件、MCP 参数/请求信封/JSON 和 WebSocket 文本构建；现有上游基线、协议字段、工具顺序、绑定信息和用户交互保持不变。\n  4. 统一小智会话状态收尾：自动返回、语音前端停止和 TTS 回合计时复位使用单一窄入口，保留 5 分钟返回、番茄钟/对话保护、尾帧排空、告别回复和恢复聆听规则。\n  5. 继续收敛 UI 主循环和工作页共享逻辑：页面名称、低刷新分类、状态栏标签/温湿度映射、对象可见性、设置页同步超时和退出清理集中维护，隐藏页不增加额外刷新。\n  6. 清理多余 UI 状态与重复写入：移除永久隐藏的旧开关文字对象、System Info 遗留 OTA 引用和天气看板重复显隐写入；设置页 OTA 进度、菜单 label、声音保存回滚及手动同步请求改为复用既有路径。\n  7. 收窄天气时钟、图片时钟、天气看板、温湿时钟、日历、温湿历史、小智…",
+      "app": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.5.8.bin",
+        "sha256": "14755a137be58036980855fde568fdb9f8210787243fca82f44cbcd7e3d47da3",
+        "size": 6207024
+      },
+      "merged": {
+        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.5.8_merged.bin",
+        "sha256": "24e7772b77e69e7738613eb0f4531bbb5c4d538a217f259e3669120fcb9b8e3e",
+        "size": 16509951
+      }
+    },
     {
       "version": "v1.5.7",
       "notes": "`v1.5.7`：\n  1. 统一未充电电池 ADC 与本地温湿度的日夜采样节奏：白天每个整分钟、夜间每 2 分钟整边界采样；开机首样、时间不可信 60 秒兜底和确认充电后的约 1 秒快速采样保持不变。\n  2. 修复并加固小智 AI 音频链路：避免 TTS 回复被 WakeNet 回声误中断，增加唤醒音静音预热和外设稳定等待，并在 Codec 关闭异常时保留可恢复状态，降低回复中途停止和偶发沙哑风险。\n  3. 继续收敛七页显示刷新：全天进度条共用单一模块，日历星期条与日期区独立定位，反显数字牌形成共享绘制组件；隐藏页、低频页和秒级页仍按原可见性及局部刷新规则运行。\n  4. 加固 FreeRTOS Tick 长期运行边界：UI 短截止时间、传感器 housekeeping、可见页同步退避、OTA 状态保持、小智自动返回和音频等待统一使用回绕安全判断，避免长时间运行后出现误超时或高频空转。\n  5. 拆分天气组合更新职责：手动城市、IP 定位回退、实时天气、预警、未来预报和空气质量保持原请求顺序与缓存提交语义，endpoint 客户端与批量业务编排分别维护。\n  6. 加固网络输入处理：JSON 根对象、字段复制、URL component 编码和 gzip payload 解析形成独立模块，补充损坏数据、超长字段和边界输入主机测试，天气 API、每日文字和配网表单行为不变。\n  7. 拆分并测试 OTA manifest 解析，修复超长版本组件比较可能溢出的边界；R2 主…",
@@ -111,34 +139,6 @@
         "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.5.0_merged.bin",
         "sha256": "a3cee1953f8053a3c6c93f4d602ecbd4ffeafdece2b5e24ae32ae175a8b0b1c7",
         "size": 16509951
-      }
-    },
-    {
-      "version": "v1.4.59",
-      "notes": "`v1.4.59`：\n  1. 加快插电响应：未确认充电时的轻量 ADC 探测从 15 秒缩短到 5 秒，减少插上充电器后电池图标迟迟不进入闪烁的问题。\n  2. 提高充电中刷新频率：确认充电后电池采样改为约 1 秒一次，充电状态变化和拔电恢复能更快反馈到界面。\n  3. 修复充电中闪烁停止：退出充电态只依据明确电压回落，不再因为单次电量百分比估算抖动就关闭充电闪烁。\n  4. 保持整秒闪烁：电池当前电量格继续跟随整秒相位闪烁，和天气时钟、温湿时钟等秒级页面保持同步。\n  5. 完整验证并发布：重新构建固件和 SDL，生成发布产物、预览图、Gitea Release、Cloudflare R2 OTA，并同步 GitHub 源码仓库。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.59.bin",
-        "sha256": "3e3e0bfc062dc573863c5767820a5a4c81d4bb90cbd71df24acaade44f3b72b2",
-        "size": 5807184
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.59_merged.bin",
-        "sha256": "558303895f11dc1b7e76825c7067bace0a9b05e5185d4942c3197eea59200d2f",
-        "size": 5938256
-      }
-    },
-    {
-      "version": "v1.4.58",
-      "notes": "`v1.4.58`：\n  1. 优化充电检测响应：未确认充电时的轻量 ADC 探测从 30 秒缩短到 15 秒，插入充电器后更快进入充电显示。\n  2. 修复充电平台期闪烁停止：进入充电态后不再因为“长时间没有继续升压”退出，只有检测到明显掉压或电量下降才认为拔掉充电器。\n  3. 保持整秒闪烁节拍：充电电池当前格继续跟随整秒相位闪烁，低刷新页面也会在充电时按下一秒边界唤醒。\n  4. 累积发布近期维护优化：包含 QWeather 输出 buffer 保护、启动页配网提示文本保护等低风险整理。\n  5. 完整验证并发布：重新构建固件和 SDL，生成发布产物、预览图、Gitea Release、Cloudflare R2 OTA，并同步 GitHub 源码仓库。",
-      "app": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.58.bin",
-        "sha256": "24103c50bf0f69bcd5eea614bf14d0dff8fe2c367777aaf4ddbd785cf9c46239",
-        "size": 5807312
-      },
-      "merged": {
-        "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.4.58_merged.bin",
-        "sha256": "fd05e0fc78ab16bace5a3804d3abfc3af3ba92405f4d56f1ba9bbaf0e426ff15",
-        "size": 5938384
       }
     }
   ]
