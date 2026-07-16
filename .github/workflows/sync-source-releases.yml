@@ -1,0 +1,97 @@
+# 从公开源码仓库的构建完成事件同步并校验 OTA 备用固件。
+name: Sync Source OTA Releases
+
+on:
+  repository_dispatch:
+    types:
+      - clock_firmware_ready
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Optional source version, for example v1.5.17"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-source-ota-releases
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Mirror source firmware
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out OTA mirror
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate dispatch source
+        id: request
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_SOURCE: ${{ github.event.client_payload.source_repository }}
+          DISPATCH_VERSION: ${{ github.event.client_payload.version }}
+          MANUAL_VERSION: ${{ inputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected_source="wickenzh/ESP32-S3-RLCD-4.2"
+          if [[ "$EVENT_NAME" == "repository_dispatch" && "$DISPATCH_SOURCE" != "$expected_source" ]]; then
+            echo "Rejected dispatch source: $DISPATCH_SOURCE" >&2
+            exit 1
+          fi
+          requested_version="$DISPATCH_VERSION"
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            requested_version="$MANUAL_VERSION"
+          fi
+          if [[ -n "$requested_version" && ! "$requested_version" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid requested version: $requested_version" >&2
+            exit 1
+          fi
+          echo "source_repository=$expected_source" >> "$GITHUB_OUTPUT"
+          echo "requested_version=$requested_version" >> "$GITHUB_OUTPUT"
+
+      - name: Mirror manifests and Release assets
+        id: mirror
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SOURCE_REPOSITORY: ${{ steps.request.outputs.source_repository }}
+          REQUESTED_VERSION: ${{ steps.request.outputs.requested_version }}
+          TARGET_REPOSITORY: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(python3 .github/scripts/sync_from_source.py \
+            --source-repository "$SOURCE_REPOSITORY" \
+            --target-repository "$TARGET_REPOSITORY" \
+            --requested-version "$REQUESTED_VERSION" \
+            --latest firmware/latest.json \
+            --versions firmware/versions.json \
+            --readme README.md)"
+          if [[ ! "$version" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Mirror helper returned an invalid version: $version" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Commit OTA mirror metadata
+        env:
+          VERSION: ${{ steps.mirror.outputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- firmware/latest.json firmware/versions.json README.md; then
+            echo "OTA mirror metadata already matches $VERSION"
+            exit 0
+          fi
+          git config user.name "GitHub Actions OTA Mirror"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add firmware/latest.json firmware/versions.json README.md
+          git commit -m "Sync ${VERSION} OTA mirror [skip ci]"
+          git push origin HEAD:main
