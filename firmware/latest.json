@@ -1,7 +1,7 @@
 {
-  "version": "v1.5.12",
-  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.5.12.bin",
-  "sha256": "9b39646030565555a2762ae86d3763d0e46c6729ffc149d89bdf5406149031b7",
-  "size": 6209168,
-  "notes": "ESP32-S3 RLCD 4.2 天气时钟 v1.5.12 源码发布。\n\n`v1.5.12`：1. 修复冷启动天气同步在连续内存保护延期后丢失待办的问题；资源暂时不足时保留任务并错峰重试，启动压力窗口结束后自动继续补拉，天气时钟和天气看板不再长期停留在“等待数据”。\n  2. 加固网络配置与业务 NVS 的失败输出和变化标记：底层完整写入成功后才报告状态变化，读取、擦除或写入失败时不再传播陈旧句柄、文本或错误的 changed 状态。\n  3. 稳定优先清理主程序、音频、传感器、电源、QWeather、每日文字、配网和 Wi-Fi 生命周期中的断言专用重复文本登记与低价值编译期约束，保留真实协议、容量、时序、功耗和错误处理行为。\n  4. 完成 GitHub 源码自动构建与 Cloudflare R2 导入链路收尾：版本标签触发固定 ESP-IDF 构建双固件，manifest push 通过签名 Webhook 即时触发 R2 原子导入，不再使用周期轮询或由本机重复上传大固件。\n  5. 新增并扩展网络同步调度、GitHub 工作流、manifest 与 Cloudflare Webhook 主机测试；本次正式发布将端到端核验 GitHub Release 双附件及 R2 latest.json、versions.json、app、merged 四项产物。\n  6. 本版不修改 UI、分区表、NVS key、资源格式、OTA 协议或上位机接口；已正确刷入 v1.5.x 分区表的设备可直接 OTA 升级，无需恢复出厂。\n\n本 Release 仅包含公开的 RLCD_CLOCK 时钟源码；严禁商用。"
+  "version": "v1.5.17",
+  "url": "https://rlcd-update.wickenzh.workers.dev/firmware/weather_clock_v1.5.17.bin",
+  "sha256": "de726a7db96fe7782e525b89487174ae127e94e469a681f4bb34d423f1863cbf",
+  "size": 6223312,
+  "notes": "ESP32-S3 RLCD 4.2 天气时钟 v1.5.17 源码发布。\n\n`v1.5.17`：\n  1. 将应用全生命周期常驻的网络/音频 PM 锁深度计数 mutex 改为 FreeRTOS 静态互斥量，减少冷启动内部堆分配和长期碎片来源，四类性能锁与 light sleep 行为保持不变。\n  2. 将配网、联网同步、OTA、启动任务和小智共用的应用 EventGroup 改为 FreeRTOS 静态控制块，减少冷启动动态分配和长期堆碎片，事件位及失败回滚语义保持不变。\n  3. 新增并强化 PM 锁所有权及应用事件组生命周期专项测试；本版不改变七个工作页 UI、联网流程、用户操作、分区表、NVS key、资源格式、OTA 协议或上位机接口，已使用 v1.5.x 分区表的设备可直接 OTA 升级。\n\n本 Release 仅包含公开的 RLCD_CLOCK 时钟源码；严禁商用。"
 }
