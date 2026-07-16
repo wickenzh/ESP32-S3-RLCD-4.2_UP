@@ -418,7 +418,7 @@ def ensure_target_release(
     release = release_by_tag(api, target_repository, version)
     payload = {
         "name": version,
-        "body": notes,
+        "body": render_release_body(version, notes),
         "draft": False,
         "prerelease": False,
     }
@@ -445,6 +445,16 @@ def ensure_target_release(
     if not isinstance(updated, dict):
         raise RuntimeError(f"unable to update target release {version}")
     return updated
+
+
+def render_release_body(version: str, notes: str) -> str:
+    return (
+        f"ESP32-S3 RLCD 4.2 天气时钟 {version} OTA 固件。\n\n"
+        f"{notes.strip()}\n\n"
+        "附件说明：\n"
+        f"- `weather_clock_{version}.bin`：设备 OTA 升级固件。\n"
+        f"- `weather_clock_{version}_merged.bin`：包含分区表的完整刷写固件。"
+    )
 
 
 def upload_asset(
