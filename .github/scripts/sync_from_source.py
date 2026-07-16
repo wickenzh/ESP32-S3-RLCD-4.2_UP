@@ -469,9 +469,39 @@ def sync_release_assets(
     temp_dir: Path,
 ) -> None:
     version = str(item["version"])
+    target_release = release_by_tag(api, target_repository, version)
+    target_assets = (
+        release_assets(api, target_repository, target_release.get("id"))
+        if target_release is not None
+        else []
+    )
+    target_is_complete = all(
+        asset_is_valid(
+            api,
+            target_repository,
+            find_asset(target_assets, f"weather_clock_{version}{suffix}"),
+            item[kind],
+            temp_dir,
+            f"target weather_clock_{version}{suffix}",
+        )
+        for kind, suffix in (("app", ".bin"), ("merged", "_merged.bin"))
+    )
+    if target_is_complete:
+        ensure_target_release(
+            api,
+            target_repository,
+            version,
+            str(item["notes"]),
+            latest,
+        )
+        log(f"Kept validated target release {version}")
+        return
+
     source_release = release_by_tag(api, source_repository, version)
     if source_release is None:
-        raise RuntimeError(f"source release is missing: {version}")
+        raise RuntimeError(
+            f"target release is incomplete and source release is missing: {version}"
+        )
     source_assets = release_assets(api, source_repository, source_release.get("id"))
     target_release = ensure_target_release(
         api,
