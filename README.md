@@ -1,7 +1,7 @@
 # ESP32-S3 RLCD Weather Clock OTA
 
-本仓库由GitHub Actions全自动构建
-这个仓库是设备 OTA 与上位机固件备用镜像，不保存固件源码。
+- 本仓库由GitHub Actions全自动构建
+- 这个仓库是设备 OTA 与上位机固件备用镜像，不保存固件源码。
 
 ## 当前版本
 
