@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-- 最新版本：`v1.5.18`
+- 最新版本：`v1.5.19`
 - Manifest：`firmware/latest.json`
 - 版本清单：`firmware/versions.json`
 
@@ -23,6 +23,9 @@
 
 ## 最近版本
 
+- `v1.5.19`
+  - app sha256: `c756e8a41fa07d23799de744afe487c6ae78ae09bda30c94c72b3e202ca2c140`
+  - merged sha256: `8fdc4f1a5a19cca4e957c7766e49f2736df83d692024c511cf20ae637ab7f91a`
 - `v1.5.18`
   - app sha256: `27cb4539b3b2ddad4ec7272aba1a6931d9182e17f0a4f9df698446e2bed6d3da`
   - merged sha256: `72e9d6dc52f3bdbd22ddb160f8076faf3d52a83630f609430db98ade3c89362c`
@@ -50,6 +53,3 @@
 - `v1.5.10`
   - app sha256: `e0d963141b7910fa14f06f5db0eaf666a99ec62c6fd32b671501ff7e4dfb1426`
   - merged sha256: `f560e7fd69210353f6bb4b7f26cadffe806b6bf3ff9c0aef98b7fe6fb88ebf2f`
-- `v1.5.9`
-  - app sha256: `cd21709fd9ac0ea232563b56f0f7db9093a59ccc40824d568d2c22dcb7b9f942`
-  - merged sha256: `4411a1aebb13423a2b0f5cbeca6cdd87825ecf8a0ea6d654a0857d44dbd3bde3`
