@@ -24,8 +24,8 @@
 ## 最近版本
 
 - `v1.5.25`
-  - app sha256: `d1f72a094dc7b5ebbfdbbff83326fa842d2e55ae9fb9b9478becaa8e895d2f67`
-  - merged sha256: `921b42dc9fbe21fd248448c74b3405caf613824b0fbac16acca7f5e6233a0f42`
+  - app sha256: `7ac6d9c4c6f58baa3dad27ae772b7f0f8c067b766d18c25f1a97e62a8e2712a4`
+  - merged sha256: `f878177ca7b1c3cbd463c5e9c91bc2aed5adf7f04feb1d0ea2fc0051763c2c6c`
 - `v1.5.24`
   - app sha256: `9bd56894e1bc6385f191a3e33cdaa153f40bf603d680170a3445e9df7236cc37`
   - merged sha256: `7dfdecaf22b9624ea7f5d1170ce62bfa460cd4d97087af99d40de708fd68d2a4`
